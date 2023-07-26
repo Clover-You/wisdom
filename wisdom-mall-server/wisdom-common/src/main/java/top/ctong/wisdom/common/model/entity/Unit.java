@@ -1,5 +1,7 @@
 package top.ctong.wisdom.common.model.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -43,6 +45,7 @@ public class Unit implements Serializable {
     /**
      * 单位id
      */
+    @TableId(type = IdType.ASSIGN_ID)
     @Schema(description = "单位id")
     private Long unitId;
 
