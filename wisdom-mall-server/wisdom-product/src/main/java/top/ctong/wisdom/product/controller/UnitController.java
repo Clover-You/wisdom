@@ -72,7 +72,7 @@ public class UnitController {
      * @author Clover You
      * @date 2023/7/26 14:43
      */
-    @GetMapping("post")
+    @GetMapping("page")
     @Log(name = "分页获取单位信息")
     @Operation(summary = "分页获取单位信息")
     public R<?> page(UnitPageRequest params, Principal principal) {
@@ -81,10 +81,11 @@ public class UnitController {
         queryWrapper.eq(Unit::getUnitId, Long.valueOf(principal.getName()));
 
         // 如果单位名称不为空，那么需要对齐进行模糊检索
-        queryWrapper.like(
-            StringUtils.notBlank(params.getUnitName()),
-            Unit::getUnitName, params.getUnitName().trim()
-        );
+        if (StringUtils.notBlank(params.getUnitName())) {
+            queryWrapper.like(
+                Unit::getUnitName, params.getUnitName().trim()
+            );
+        }
 
         var page = new Page<Unit>(params.getCurrent(), params.getSize());
         var results = unitService.page(page, queryWrapper);
