@@ -47,7 +47,7 @@ export const AddUnitDrawer: FC<UnitDrawerProps> = (props) => {
       setLoadState(true)
       const {
         data: { code, message },
-      } = await addNewUnit(formData)
+      } = await addNewUnit({ ...formData, enable: 1 })
 
       if (code != 200) return messageApi?.error?.(message)
 
