@@ -1,5 +1,5 @@
 server:
-  port: 10100
+  port: 10300
 spring:
   application:
     name: wisdom-third-party
