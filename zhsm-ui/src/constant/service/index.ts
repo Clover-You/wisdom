@@ -7,10 +7,12 @@
  */
 import { login } from './login'
 import { user } from './user'
+import { unit } from './unit'
 
 const service = {
   login,
   user,
+  unit,
 }
 
 export default service

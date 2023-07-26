@@ -9,39 +9,57 @@
  */
 'use client'
 import { Button, Form, Input, Radio, Space } from 'antd'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import type { FC } from 'react'
 
 import DrawerPro from '#/components/DrawerPro'
-import { useCallback, useEffect, useState } from 'react'
-import type { FC } from 'react'
+import { addNewUnit } from '#/api/unit'
+import { useMessage } from '#/hooks/antd/useMessage'
 
 type UnitDrawerProps = {
   open?: boolean
   afterOpenChange?: (open: boolean) => void
+  onFinish: () => void
 }
 
 export const AddUnitDrawer: FC<UnitDrawerProps> = (props) => {
   const [open, setOpenState] = useState(false)
-  const [form] = Form.useForm()
-
-  const FooterAction = useCallback(() => {
-    return (
-      <Space>
-        <Button
-          htmlType={'submit'}
-          onClick={form.submit}
-        >
-          保存并新增
-        </Button>
-        <Button type={'primary'}>保存</Button>
-        <Button onClick={() => setOpenState(false)}>取消</Button>
-      </Space>
-    )
-  }, [form])
+  const [loadState, setLoadState] = useState(false)
+  const [form] = Form.useForm<API.AddUnitRequest>()
+  const messageApi = useMessage()
+  // 记录操作是否成功
+  let operationSucceededFlag = useRef(false)
 
   const afterOpenChange = (drawerState: boolean) => {
     // 通知父组件抽屉状态已更改
     props.afterOpenChange?.(drawerState)
     form.resetFields()
+
+    // 检查是否操作成功，如果成功则通知父组件
+    if (operationSucceededFlag) {
+      props.onFinish()
+      operationSucceededFlag.current = false
+    }
+  }
+
+  const onFormSubmit = async (formData: API.AddUnitRequest) => {
+    try {
+      setLoadState(true)
+      const {
+        data: { code, message },
+      } = await addNewUnit(formData)
+
+      if (code != 200) return messageApi?.error?.(message)
+
+      messageApi?.success?.(message)
+      operationSucceededFlag.current = true
+      setOpenState(false)
+    } catch (err) {
+      console.error(err)
+      messageApi?.error?.('系统异常')
+    } finally {
+      setLoadState(false)
+    }
   }
 
   useEffect(() => setOpenState(props.open ?? false), [props.open])
@@ -51,16 +69,20 @@ export const AddUnitDrawer: FC<UnitDrawerProps> = (props) => {
       title={'新增单位'}
       width={700}
       open={open}
-      footer={<FooterAction />}
+      footer={
+        <FooterAction
+          cancelClick={() => setOpenState(false)}
+          loadState={loadState}
+          submit={form.submit}
+        />
+      }
       height={700}
       afterOpenChange={afterOpenChange}
     >
       <Form
         form={form}
         layout={'vertical'}
-        onFinish={(data) => {
-          console.log(data)
-        }}
+        onFinish={onFormSubmit}
       >
         <Form.Item
           label={'单位名称'}
@@ -76,7 +98,7 @@ export const AddUnitDrawer: FC<UnitDrawerProps> = (props) => {
 
         <Form.Item
           label={'备注'}
-          name={'remark'}
+          name={'unitRemark'}
         >
           <Input.TextArea rows={3} />
         </Form.Item>
@@ -110,6 +132,37 @@ const DecimalRadio: FC<{
         <Radio value={0}>允许</Radio>
         <Radio value={1}>不允许</Radio>
       </Radio.Group>
+    </Space>
+  )
+}
+
+const FooterAction: FC<{
+  submit: () => void
+  loadState: boolean
+  cancelClick: () => void
+}> = (props) => {
+  return (
+    <Space>
+      <Button
+        onClick={props.submit}
+        loading={props.loadState}
+      >
+        保存并新增
+      </Button>
+
+      <Button
+        type={'primary'}
+        disabled={props.loadState}
+      >
+        保存
+      </Button>
+
+      <Button
+        onClick={props.cancelClick}
+        disabled={props.loadState}
+      >
+        取消
+      </Button>
     </Space>
   )
 }

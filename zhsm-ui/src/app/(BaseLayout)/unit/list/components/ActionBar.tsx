@@ -15,7 +15,8 @@ import { AddUnitDrawer } from '#/app/(BaseLayout)/unit/list/components/AddUnitDr
 import { useState } from 'react'
 
 export const ActionBar: FC<{
-  openAddUnitDrawer: () => void
+  /**与服务器交互完成时触发，例如：新增 */
+  finish: () => void
 }> = (props) => {
   const {
     token: { margin },
@@ -31,6 +32,7 @@ export const ActionBar: FC<{
       <AddUnitDrawer
         open={addDrawerOpen}
         afterOpenChange={setAddDrawerOpenState}
+        onFinish={props.finish}
       />
 
       <Row
