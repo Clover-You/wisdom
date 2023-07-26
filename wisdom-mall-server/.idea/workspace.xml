@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c3e40df9-f31e-4161-b4d6-a24532e27cbd" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="AnnotationType" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/6.1.0/spring-security-config-6.1.0-sources.jar!/org/springframework/security/config/annotation/AbstractSecurityBuilder.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/6.1.0/spring-security-config-6.1.0-sources.jar!/org/springframework/security/config/annotation/web/configurers/AuthorizeHttpRequestsConfigurer.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/6.1.0/spring-security-core-6.1.0-sources.jar!/org/springframework/security/authorization/AuthorizationManager.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$MAVEN_REPOSITORY$" />
+        <option name="mavenHome" value="/usr/local/Cellar/maven/3.9.2/libexec" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2RS53NdyJdNcsAYil6gjn5qJhcO" />
+  <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;4523b36aa27cc36ca61d93e415706e7d&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.WisdomGatewayApplication">
+    <configuration name="HutoolJwtTests.create" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wisdom-user" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.ctong.wisdom.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="top.ctong.wisdom.user" />
+      <option name="MAIN_CLASS_NAME" value="top.ctong.wisdom.user.HutoolJwtTests" />
+      <option name="METHOD_NAME" value="create" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HutoolJwtTests.parse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wisdom-user" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.ctong.wisdom.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="top.ctong.wisdom.user" />
+      <option name="MAIN_CLASS_NAME" value="top.ctong.wisdom.user.HutoolJwtTests" />
+      <option name="METHOD_NAME" value="parse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HutoolJwtTests.verify" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wisdom-user" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.ctong.wisdom.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="top.ctong.wisdom.user" />
+      <option name="MAIN_CLASS_NAME" value="top.ctong.wisdom.user.HutoolJwtTests" />
+      <option name="METHOD_NAME" value="verify" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="wisdom-mall-server" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="wisdom-mall-server" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WisdomGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="wisdom-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="top.ctong.wisdom.gateway.WisdomGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WisdomLogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="wisdom-log" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="top.ctong.wisdom.log.WisdomLogApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WisdomThirdPartyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="wisdom-third-party" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="top.ctong.wisdom.thirdparty.WisdomThirdPartyApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WisdomUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="/usr/local/Cellar/openjdk/20.0.1/libexec/openjdk.jdk/Contents/Home" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="wisdom-user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="top.ctong.wisdom.user.WisdomUserApplication" />
+      <option name="VM_PARAMETERS" value="--enable-preview " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.HutoolJwtTests.create" />
+      <item itemvalue="JUnit.HutoolJwtTests.parse" />
+      <item itemvalue="JUnit.HutoolJwtTests.verify" />
+      <item itemvalue="Spring Boot.WisdomGatewayApplication" />
+      <item itemvalue="Spring Boot.WisdomThirdPartyApplication" />
+      <item itemvalue="Spring Boot.WisdomLogApplication" />
+      <item itemvalue="Spring Boot.WisdomUserApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.HutoolJwtTests.verify" />
+        <item itemvalue="JUnit.HutoolJwtTests.parse" />
+        <item itemvalue="JUnit.HutoolJwtTests.create" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c3e40df9-f31e-4161-b4d6-a24532e27cbd" name="Changes" comment="" />
+      <created>1687230441449</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687230441449</updated>
+      <workItem from="1687230442621" duration="32430000" />
+      <workItem from="1687342434152" duration="4842000" />
+      <workItem from="1687422082520" duration="1829000" />
+      <workItem from="1687424366425" duration="710000" />
+      <workItem from="1687425083140" duration="102000" />
+      <workItem from="1687425189758" duration="98000" />
+      <workItem from="1687425292431" duration="839000" />
+      <workItem from="1687426137992" duration="3064000" />
+      <workItem from="1687670852031" duration="8743000" />
+      <workItem from="1687697480494" duration="5422000" />
+      <workItem from="1687768938181" duration="14716000" />
+      <workItem from="1688002357622" duration="15737000" />
+      <workItem from="1688119091070" duration="387000" />
+      <workItem from="1688276180355" duration="208000" />
+      <workItem from="1688386503854" duration="4443000" />
+      <workItem from="1688564627321" duration="1180000" />
+      <workItem from="1688605602677" duration="402000" />
+      <workItem from="1688607148800" duration="2000" />
+      <workItem from="1688742460231" duration="2193000" />
+      <workItem from="1688827772855" duration="532000" />
+      <workItem from="1688908141171" duration="1741000" />
+      <workItem from="1688952182016" duration="4110000" />
+      <workItem from="1689130277842" duration="777000" />
+      <workItem from="1689131083243" duration="128000" />
+      <workItem from="1689131224241" duration="3279000" />
+      <workItem from="1689141686694" duration="1793000" />
+      <workItem from="1689143513960" duration="20686000" />
+      <workItem from="1689905753426" duration="1354000" />
+      <workItem from="1690161532330" duration="1362000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/6.0.9/spring-context-6.0.9-sources.jar!/org/springframework/context/support/AbstractApplicationContext.java</url>
+          <line>607</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/6.0.9/spring-beans-6.0.9-sources.jar!/org/springframework/beans/factory/support/DefaultListableBeanFactory.java</url>
+          <line>962</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/3.1.0/spring-boot-3.1.0-sources.jar!/org/springframework/boot/SpringApplication.java</url>
+          <line>310</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/3.1.0/spring-boot-autoconfigure-3.1.0-sources.jar!/org/springframework/boot/autoconfigure/web/reactive/ReactiveWebServerFactoryAutoConfiguration.java</url>
+          <line>112</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/3.1.0/spring-boot-3.1.0-sources.jar!/org/springframework/boot/sql/init/dependency/DatabaseInitializationDependencyConfigurer.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/6.0.9/spring-context-6.0.9-sources.jar!/org/springframework/context/support/GenericApplicationContext.java</url>
+          <line>349</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/6.0.9/spring-context-6.0.9-sources.jar!/org/springframework/context/annotation/AnnotationConfigUtils.java</url>
+          <line>151</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/6.0.9/spring-context-6.0.9-sources.jar!/org/springframework/context/annotation/AnnotationConfigUtils.java</url>
+          <line>231</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/6.0.9/spring-context-6.0.9-sources.jar!/org/springframework/context/annotation/AnnotationConfigUtils.java</url>
+          <line>137</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/wisdom-user/src/test/java/top/ctong/wisdom/user/HutoolJwtTests.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

@@ -1,0 +1,13 @@
+server:
+  port: 10100
+spring:
+  application:
+    name: wisdom-third-party
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  data:
+    redis:
+      host: localhost
+      port: 6379

@@ -1,0 +1,3 @@
+logging:
+  level:
+    top.ctong.wisdom.common: debug

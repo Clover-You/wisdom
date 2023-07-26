@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="fastRequestCurrentParamGroup">
+    <option name="className" value="top.ctong.wisdom.thirdparty.controller.MobilePhoneVerifyCodeController" />
+    <option name="filePath" value="" />
+    <option name="method" value="sendLoginCode" />
+    <option name="methodDescription" value="发送登录验证码" />
+    <option name="module" value="wisdom-third-party" />
+    <option name="originUrl" value="/mobile-phone-verify-code/send-login-code" />
+    <option name="requestParamMap">
+      <map>
+        <entry key="phone">
+          <value>
+            <Object />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="returnDocument" value="{&quot;code&quot;:&quot;No comment,Type =Number&quot;,&quot;message&quot;:&quot;No comment,Type =String&quot;,&quot;data&quot;:{}}" />
+    <option name="url" value="/mobile-phone-verify-code/send-login-code" />
+  </component>
+</project>
