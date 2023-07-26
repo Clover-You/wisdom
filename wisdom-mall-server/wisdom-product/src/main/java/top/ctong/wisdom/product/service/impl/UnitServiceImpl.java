@@ -72,6 +72,15 @@ public class UnitServiceImpl extends ServiceImpl<UnitMapper, Unit> implements Un
         return this.save(entity);
     }
 
+    /**
+     * 分页查询单位信息
+     *
+     * @param params 查询参数
+     * @param userId 用户id
+     * @return PageResp<UnitPageResponse>
+     * @author Clover You
+     * @date 2023/7/26 17:14
+     */
     @Override
     public PageResp<UnitPageResponse> page(UnitPageRequest params, Long userId) {
         var queryWrapper = new LambdaQueryWrapper<Unit>();

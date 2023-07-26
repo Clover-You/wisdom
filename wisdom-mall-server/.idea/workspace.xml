@@ -246,7 +246,7 @@
       <workItem from="1689905753426" duration="1354000" />
       <workItem from="1690161532330" duration="1362000" />
       <workItem from="1690335027164" duration="3220000" />
-      <workItem from="1690349391023" duration="11205000" />
+      <workItem from="1690349391023" duration="11838000" />
     </task>
     <servers />
   </component>
@@ -305,11 +305,6 @@
           <url>file://$PROJECT_DIR$/wisdom-user/src/test/java/top/ctong/wisdom/user/HutoolJwtTests.java</url>
           <line>54</line>
           <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/wisdom-product/src/main/java/top/ctong/wisdom/product/service/impl/UnitServiceImpl.java</url>
-          <line>89</line>
-          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

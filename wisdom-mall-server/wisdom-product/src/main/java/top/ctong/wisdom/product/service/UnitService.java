@@ -38,5 +38,14 @@ public interface UnitService extends IService<Unit> {
      */
     boolean save(AddUnitRequest params, Long userId);
 
+    /**
+     * 分页查询单位信息
+     *
+     * @param params 查询参数
+     * @param userId 用户id
+     * @return PageResp<UnitPageResponse>
+     * @author Clover You
+     * @date 2023/7/26 17:14
+     */
     PageResp<UnitPageResponse> page(UnitPageRequest params, Long userId);
 }
