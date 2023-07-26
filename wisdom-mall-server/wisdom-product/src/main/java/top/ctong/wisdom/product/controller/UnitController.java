@@ -8,7 +8,8 @@ import jakarta.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
-import top.ctong.wisdom.common.R;
+import top.ctong.wisdom.common.utils.PageResp;
+import top.ctong.wisdom.common.utils.R;
 import top.ctong.wisdom.common.log.Log;
 import top.ctong.wisdom.common.model.dto.product.unit.AddUnitRequest;
 import top.ctong.wisdom.common.model.dto.product.unit.UnitPageRequest;
@@ -75,10 +76,11 @@ public class UnitController {
     @GetMapping("page")
     @Log(name = "分页获取单位信息")
     @Operation(summary = "分页获取单位信息")
-    public R<?> page(UnitPageRequest params, Principal principal) {
+    public R<PageResp> page(UnitPageRequest params, Principal principal) {
         var queryWrapper = new LambdaQueryWrapper<Unit>();
 
-        queryWrapper.eq(Unit::getUnitId, Long.valueOf(principal.getName()));
+        queryWrapper.eq(Unit::getUserId, Long.valueOf(principal.getName()));
+        queryWrapper.eq(Unit::getIsDel, 0);
 
         // 如果单位名称不为空，那么需要对齐进行模糊检索
         if (StringUtils.notBlank(params.getUnitName())) {
@@ -90,7 +92,7 @@ public class UnitController {
         var page = new Page<Unit>(params.getCurrent(), params.getSize());
         var results = unitService.page(page, queryWrapper);
 
-        return R.ok(results);
+        return R.ok(new PageResp(results));
     }
 
 }
