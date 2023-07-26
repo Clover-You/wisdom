@@ -1,0 +1,18 @@
+server:
+  port: 10200
+spring:
+  application:
+    name: wisdom-product
+  datasource:
+    url: jdbc:postgresql://localhost:5432/wisdom_mall
+    username: postgres
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+logging:
+  level:
+    top.ctong.wisdom.product: debug

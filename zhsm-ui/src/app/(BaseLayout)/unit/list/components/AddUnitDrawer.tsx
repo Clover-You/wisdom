@@ -36,7 +36,7 @@ export const AddUnitDrawer: FC<UnitDrawerProps> = (props) => {
         <Button onClick={() => setOpenState(false)}>取消</Button>
       </Space>
     )
-  }, [])
+  }, [form])
 
   const afterOpenChange = (drawerState: boolean) => {
     // 通知父组件抽屉状态已更改

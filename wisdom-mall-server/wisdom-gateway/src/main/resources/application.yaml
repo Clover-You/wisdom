@@ -21,6 +21,12 @@ spring:
             - Path=/api/third-party/**
           filters:
             - RewritePath=/api/third-party/(?<path>.*),/$\{path}
+        - id: wisdom-product
+          uri: lb://wisdom-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<path>.*),$\{path}
 logging:
   level:
     top.ctong.wisdom.gateway: debug

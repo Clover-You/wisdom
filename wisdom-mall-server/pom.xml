@@ -49,6 +49,7 @@
         <module>wisdom-log</module>
         <module>wisdom-third-party</module>
         <module>wisdom-gateway</module>
+        <module>wisdom-product</module>
     </modules>
 
     <dependencies>
