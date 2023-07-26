@@ -3,7 +3,7 @@ package top.ctong.wisdom.common.http.service;
 import org.springframework.web.service.annotation.HttpExchange;
 import org.springframework.web.service.annotation.PostExchange;
 import reactor.core.publisher.Mono;
-import top.ctong.wisdom.common.R;
+import top.ctong.wisdom.common.utils.R;
 
 /**
  * █████▒█      ██  ▄████▄   ██ ▄█▀     ██████╗ ██╗   ██╗ ██████╗

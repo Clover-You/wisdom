@@ -1,9 +1,10 @@
-package top.ctong.wisdom.common;
+package top.ctong.wisdom.common.utils;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.SneakyThrows;
+import top.ctong.wisdom.common.ErrorCode;
 
 /**
  * <p>

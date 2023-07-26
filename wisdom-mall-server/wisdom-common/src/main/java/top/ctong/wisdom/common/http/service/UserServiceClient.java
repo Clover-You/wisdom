@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.service.annotation.GetExchange;
 import org.springframework.web.service.annotation.HttpExchange;
 import reactor.core.publisher.Mono;
-import top.ctong.wisdom.common.R;
+import top.ctong.wisdom.common.utils.R;
 import top.ctong.wisdom.common.model.dto.user.GetUserInfoByUsernameResponse;
 
 /**
