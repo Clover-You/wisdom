@@ -14,9 +14,7 @@ import { TableProps } from 'antd/es/table'
 import { useEffect, useState } from 'react'
 import { GridProColumns, GridProProps, GridProSize } from './GridProType'
 
-function toAntdColumns<T>(
-  columns: GridProColumns<T> = []
-): TableProps<T>['columns'] {
+function toAntdColumns<T>(columns: GridProColumns<T> = []): TableProps<T>['columns'] {
   return columns.map((it) => {
     return {
       key: it.key,
@@ -27,13 +25,8 @@ function toAntdColumns<T>(
       ellipsis: it.ellipsis ?? true,
       fixed: it.fixed,
       render: (text, record, index) => {
-        if (it.minWidth == void 0 || it.minWidth <= 40)
-          return it.render?.(text, record, index) ?? text
-        return (
-          <div style={{ minWidth: it.minWidth }}>
-            {it.render?.(text, record, index) ?? text}
-          </div>
-        )
+        if (it.minWidth == void 0 || it.minWidth <= 40) return it.render?.(text, record, index) ?? text
+        return <div style={{ minWidth: it.minWidth }}>{it.render?.(text, record, index) ?? text}</div>
       },
     }
   })
@@ -50,16 +43,20 @@ function GridPro<T extends object>(props: GridProProps<T>) {
   }, [props.columns, props])
 
   return (
-    <Table<T>
-      {...{ props }}
-      style={{ borderRadius, overflow: 'hidden', ...props.style }}
-      scroll={{ x: props.width ?? 'max-content', y: props.height }}
-      dataSource={props.data}
-      columns={columns}
-      bordered={props.bordered ?? true}
-      rowKey={props.rowKey}
-      size={props.size ?? GridProSize.Middle}
-    />
+    <>
+      <Table<T>
+        {...{ props }}
+        style={{ borderRadius, overflow: 'hidden', ...props.style }}
+        scroll={{ x: props.width ?? 'max-content', y: props.height }}
+        dataSource={props.data}
+        columns={columns}
+        bordered={props.bordered ?? true}
+        rowKey={props.rowKey}
+        size={props.size ?? GridProSize.Middle}
+        loading={props.loading}
+        rowSelection={props.rowSelection}
+      />
+    </>
   )
 }
 

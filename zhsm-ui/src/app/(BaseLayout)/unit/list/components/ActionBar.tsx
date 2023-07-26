@@ -17,6 +17,11 @@ import { useState } from 'react'
 export const ActionBar: FC<{
   /**与服务器交互完成时触发，例如：新增 */
   finish: () => void
+  unitNameChange: (unitName?: string) => void
+  /**检索按钮点击 */
+  onSearch: () => void
+  /**页面是否在执行加载逻辑 */
+  loading?: boolean
 }> = (props) => {
   const {
     token: { margin },
@@ -42,6 +47,7 @@ export const ActionBar: FC<{
         <Col>
           <Space>
             <Button
+              disabled={props.loading}
               type={'primary'}
               onClick={openAddUnitDrawer}
             >
@@ -66,7 +72,13 @@ export const ActionBar: FC<{
         </Col>
 
         <Col flex={'0 0 300px'}>
-          <Input.Search enterButton={<Button>搜索</Button>} />
+          <Input.Search
+            enterButton={<Button disabled={props.loading}>搜索</Button>}
+            onSearch={props.onSearch}
+            onChange={(e) => {
+              props.unitNameChange(e.target.value)
+            }}
+          />
         </Col>
       </Row>
     </>

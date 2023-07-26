@@ -69,6 +69,8 @@ export const AddUnitDrawer: FC<UnitDrawerProps> = (props) => {
       title={'新增单位'}
       width={700}
       open={open}
+      closeIcon={!loadState}
+      onClose={() => setOpenState(false)}
       footer={
         <FooterAction
           cancelClick={() => setOpenState(false)}

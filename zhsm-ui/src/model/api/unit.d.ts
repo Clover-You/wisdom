@@ -29,4 +29,56 @@ declare namespace API {
      */
     unitRemark?: string
   }
+
+  /**
+   * UnitPageRequest，单位分页参数
+   */
+  type UnitPageRequest = {
+    /**
+     * 当前页
+     */
+    current?: number
+    /**
+     * 每页大小
+     */
+    size?: number
+    /**
+     * 单位名称
+     */
+    unitName?: string
+  }
+
+  /**
+   * UnitPageResponse，分页查询结果
+   */
+  type UnitPageResponse = {
+    /**
+     * 创建时间
+     */
+    createAt?: Date
+    /**
+     * 启用状态 0=禁用；1=启用
+     */
+    enable?: number
+    /**
+     * 是否允许小数 0=不支持；1=支持
+     */
+    isDecimal?: number
+    /**
+     * 排序
+     */
+    sort?: number
+    /**
+     * 单位id
+     */
+    unitId?: number
+    /**
+     * 单位名称
+     */
+    unitName?: string
+    /**
+     * 备注
+     */
+    unitRemark?: string
+  }
 }

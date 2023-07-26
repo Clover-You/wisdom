@@ -20,8 +20,11 @@ export const addNewUnit = (params: API.AddUnitRequest) => {
 
 /**
  * 分页获取单位列表
+ * @param params 请求参数
  * @returns 单位列表
  */
-export const fetchUnitListAsPage = () => {
-  return http.get<API.R<[]>>(service.unit.fetch_page)
+export const fetchUnitListAsPage = (params: API.UnitPageRequest) => {
+  return http.get<API.RPage<API.UnitPageResponse>>(service.unit.fetch_page, {
+    params,
+  })
 }

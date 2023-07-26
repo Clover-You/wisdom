@@ -8,13 +8,13 @@
  * @create: 2023-07-20 13:27
  */
 import type { FC } from 'react'
-import { MainBox } from '#/app/(BaseLayout)/unit/list/MainBox'
+import { MainBox } from './MainBox'
 
 export const metadata = {
   title: '单位-智慧商城',
 }
 
-const UnitList: FC = () => {
+const UnitPage: FC = () => {
   return <MainBox />
 }
-export default UnitList
+export default UnitPage
