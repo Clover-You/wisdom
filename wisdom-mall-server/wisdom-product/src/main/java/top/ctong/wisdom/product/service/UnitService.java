@@ -2,7 +2,10 @@ package top.ctong.wisdom.product.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import top.ctong.wisdom.common.model.dto.product.unit.AddUnitRequest;
+import top.ctong.wisdom.common.model.dto.product.unit.UnitPageRequest;
+import top.ctong.wisdom.common.model.dto.product.unit.UnitPageResponse;
 import top.ctong.wisdom.common.model.entity.Unit;
+import top.ctong.wisdom.common.utils.PageResp;
 
 /**
  * █████▒█      ██  ▄████▄   ██ ▄█▀     ██████╗ ██╗   ██╗ ██████╗
@@ -34,4 +37,6 @@ public interface UnitService extends IService<Unit> {
      * @date 2023/7/26 14:10
      */
     boolean save(AddUnitRequest params, Long userId);
+
+    PageResp<UnitPageResponse> page(UnitPageRequest params, Long userId);
 }

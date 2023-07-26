@@ -1,12 +1,17 @@
 package top.ctong.wisdom.product.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import top.ctong.wisdom.common.ErrorCode;
 import top.ctong.wisdom.common.exception.ThrowUtils;
 import top.ctong.wisdom.common.model.dto.product.unit.AddUnitRequest;
+import top.ctong.wisdom.common.model.dto.product.unit.UnitPageRequest;
+import top.ctong.wisdom.common.model.dto.product.unit.UnitPageResponse;
 import top.ctong.wisdom.common.model.entity.Unit;
+import top.ctong.wisdom.common.utils.PageResp;
+import top.ctong.wisdom.common.utils.StringUtils;
 import top.ctong.wisdom.product.mapper.UnitMapper;
 import top.ctong.wisdom.product.service.UnitService;
 
@@ -65,5 +70,24 @@ public class UnitServiceImpl extends ServiceImpl<UnitMapper, Unit> implements Un
             .build();
 
         return this.save(entity);
+    }
+
+    @Override
+    public PageResp<UnitPageResponse> page(UnitPageRequest params, Long userId) {
+        var queryWrapper = new LambdaQueryWrapper<Unit>();
+
+        queryWrapper.eq(Unit::getUserId, userId);
+        queryWrapper.eq(Unit::getIsDel, 0);
+
+        // 如果单位名称不为空，那么需要对齐进行模糊检索
+        if (StringUtils.notBlank(params.getUnitName())) {
+            queryWrapper.like(
+                Unit::getUnitName, params.getUnitName().trim()
+            );
+        }
+
+        var page = new Page<Unit>(params.getCurrent(), params.getSize());
+        var result = this.baseMapper.page(page, queryWrapper);
+        return new PageResp<>(result);
     }
 }

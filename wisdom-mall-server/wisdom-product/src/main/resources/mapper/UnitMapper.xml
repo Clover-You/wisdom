@@ -8,4 +8,12 @@
         select coalesce(max(sort), 0) from sys_unit
     </select>
 
+    <select id="page" resultType="top.ctong.wisdom.common.model.dto.product.unit.UnitPageResponse">
+        select unit_id, unit_name, unit_remark, enable, is_decimal, sort, create_at
+        from sys_unit
+        <where>
+            ${ew.sqlSegment}
+        </where>
+    </select>
+
 </mapper>

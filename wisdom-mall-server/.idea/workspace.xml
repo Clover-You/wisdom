@@ -246,7 +246,7 @@
       <workItem from="1689905753426" duration="1354000" />
       <workItem from="1690161532330" duration="1362000" />
       <workItem from="1690335027164" duration="3220000" />
-      <workItem from="1690349391023" duration="8816000" />
+      <workItem from="1690349391023" duration="11205000" />
     </task>
     <servers />
   </component>
@@ -307,9 +307,9 @@
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-core/3.5.3.1/mybatis-plus-core-3.5.3.1-sources.jar!/com/baomidou/mybatisplus/core/conditions/AbstractWrapper.java</url>
-          <line>172</line>
-          <option name="timeStamp" value="47" />
+          <url>file://$PROJECT_DIR$/wisdom-product/src/main/java/top/ctong/wisdom/product/service/impl/UnitServiceImpl.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

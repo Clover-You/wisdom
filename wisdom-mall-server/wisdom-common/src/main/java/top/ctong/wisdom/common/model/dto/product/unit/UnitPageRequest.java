@@ -1,10 +1,7 @@
 package top.ctong.wisdom.common.model.dto.product.unit;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import top.ctong.wisdom.common.model.dto.PageParams;
 
 import java.io.Serial;
@@ -28,11 +25,9 @@ import java.io.Serializable;
  * @author Clover
  * @date 2023-07-26 14:31
  */
-@Builder
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Schema(description = "单位分页参数")
+@EqualsAndHashCode(callSuper = true)
 public class UnitPageRequest extends PageParams implements Serializable {
 
     @Serial

@@ -1,12 +1,16 @@
-package top.ctong.wisdom.common.utils;
+package top.ctong.wisdom.common.model.dto.product.unit;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.List;
+import java.util.Date;
 
 /**
  * █████▒█      ██  ▄████▄   ██ ▄█▀     ██████╗ ██╗   ██╗ ██████╗
@@ -20,54 +24,62 @@ import java.util.List;
  * ░     ░ ░      ░  ░
  * Copyright 2023 Clover You.
  * <p>
- * 分页设置
+ * 分页查询结果
  * </p>
  *
  * @author Clover
- * @date 2023-07-26 16:10
+ * @date 2023-07-26 16:27
  */
+@Builder
 @Data
-@Schema(description = "分页响应结构")
-public class PageResp<T> implements Serializable {
+@NoArgsConstructor
+@AllArgsConstructor
+@Schema(description = "分页查询结果")
+public class UnitPageResponse implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 7716678547495664955L;
-    /**
-     * 列表数据
-     */
-    @Schema(description = "列表数据", requiredMode = Schema.RequiredMode.REQUIRED)
-    private List<T> list;
 
     /**
-     * 当前页
+     * 单位id
      */
-    @Schema(description = "当前页", requiredMode = Schema.RequiredMode.REQUIRED)
-    private long currentPage;
+    @TableId(type = IdType.ASSIGN_ID)
+    @Schema(description = "单位id")
+    private Long unitId;
 
     /**
-     * 总页数
+     * 单位名称
      */
-    @Schema(description = "总页数", requiredMode = Schema.RequiredMode.REQUIRED)
-    private long totalPage;
+    @Schema(description = "单位名称")
+    private String unitName;
 
     /**
-     * 页大小
+     * 备注
      */
-    @Schema(description = "页大小", requiredMode = Schema.RequiredMode.REQUIRED)
-    private long pageSize;
+    @Schema(description = "备注")
+    private String unitRemark;
 
     /**
-     * 总记录
+     * 启用状态 0=禁用；1=启用
      */
-    @Schema(description = "总记录", requiredMode = Schema.RequiredMode.REQUIRED)
-    private long total;
+    @Schema(description = "启用状态 0=禁用；1=启用")
+    private Short enable;
 
-    public PageResp(IPage<T> page) {
-        this.list = page.getRecords();
-        this.currentPage = page.getCurrent();
-        this.totalPage = page.getPages();
-        this.pageSize = page.getSize();
-        this.total = page.getTotal();
-    }
+    /**
+     * 是否允许小数 0=不支持；1=支持
+     */
+    @Schema(description = "是否允许小数 0=不支持；1=支持")
+    private Short isDecimal;
 
+    /**
+     * 排序
+     */
+    @Schema(description = "排序")
+    private Integer sort;
+
+    /**
+     * 创建时间
+     */
+    @Schema(description = "创建时间")
+    private Date createAt;
 }
