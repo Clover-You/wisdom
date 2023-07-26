@@ -14,6 +14,7 @@ import { fetchUnitListAsPage } from '#/api/unit'
 import LayoutSpace from '#/components/LayoutSpace'
 import { UnitList } from './components/UnitList'
 import { useMessage } from '#/hooks/antd/useMessage'
+import { TablePaginationConfig } from 'antd'
 
 export const MainBox: FC<PropsWithChildren> = () => {
   const [queryWrapper, setQueryWrapper] = useState<API.UnitPageRequest>({
@@ -22,6 +23,9 @@ export const MainBox: FC<PropsWithChildren> = () => {
   const [loading, setLoadState] = useState(false)
   const messageApi = useMessage()
   const [dataList, setDataList] = useState<API.UnitPageResponse[]>()
+  const [pageConfig, setPageConfig] = useState<TablePaginationConfig>({
+    size: 'small',
+  })
 
   const fetchList = async () => {
     try {
@@ -33,6 +37,14 @@ export const MainBox: FC<PropsWithChildren> = () => {
       if (code != 200) return messageApi?.error?.(message)
 
       setDataList(data.list)
+      console.log(data)
+
+      setPageConfig({
+        ...pageConfig,
+        pageSize: data.pageSize,
+        total: data.total,
+        current: data.currentPage,
+      })
     } finally {
       setLoadState(false)
     }
@@ -57,6 +69,7 @@ export const MainBox: FC<PropsWithChildren> = () => {
         <UnitList
           data={dataList}
           loading={loading}
+          pageConfig={pageConfig}
         />
       </MainContent>
     </>

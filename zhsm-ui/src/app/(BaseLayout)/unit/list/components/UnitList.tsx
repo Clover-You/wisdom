@@ -12,11 +12,12 @@ import { CSSProperties, FC, useState } from 'react'
 
 import GridPro from '#/components/GridPro'
 import { GridProAlignType, GridProColumns, GridProFixedType } from '#/components/GridPro/GridProType'
-import { Button, Divider, Space } from 'antd'
+import { Button, Divider, Space, TablePaginationConfig } from 'antd'
 
 export const UnitList: FC<{
   data?: API.UnitPageResponse[]
   loading?: boolean
+  pageConfig?: TablePaginationConfig
 }> = (props) => {
   const [columns] = useState<GridProColumns<API.UnitPageResponse>>([
     {
@@ -59,6 +60,7 @@ export const UnitList: FC<{
 
   return (
     <GridPro
+      pagination={props.pageConfig}
       loading={{
         tip: '数据加载中',
         spinning: props.loading,

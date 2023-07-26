@@ -55,6 +55,7 @@ function GridPro<T extends object>(props: GridProProps<T>) {
         size={props.size ?? GridProSize.Middle}
         loading={props.loading}
         rowSelection={props.rowSelection}
+        pagination={props.pagination}
       />
     </>
   )
