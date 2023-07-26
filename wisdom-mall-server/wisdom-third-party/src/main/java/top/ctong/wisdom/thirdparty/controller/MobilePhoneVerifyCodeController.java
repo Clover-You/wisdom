@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import top.ctong.wisdom.common.ErrorCode;
-import top.ctong.wisdom.common.R;
+import top.ctong.wisdom.common.utils.R;
 import top.ctong.wisdom.common.constant.redis.RedisVerifyCode;
 import top.ctong.wisdom.common.exception.ThrowUtils;
 import top.ctong.wisdom.common.utils.StringUtils;

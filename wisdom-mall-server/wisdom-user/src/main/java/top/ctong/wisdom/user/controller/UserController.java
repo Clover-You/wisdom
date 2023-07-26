@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import top.ctong.wisdom.common.ErrorCode;
-import top.ctong.wisdom.common.R;
+import top.ctong.wisdom.common.utils.R;
 import top.ctong.wisdom.common.exception.ThrowUtils;
 import top.ctong.wisdom.common.log.Log;
 import top.ctong.wisdom.common.model.dto.user.GetUserInfoByUsernameResponse;

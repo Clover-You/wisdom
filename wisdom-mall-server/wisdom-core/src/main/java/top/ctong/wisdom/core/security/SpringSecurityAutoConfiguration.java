@@ -25,7 +25,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import top.ctong.wisdom.common.ErrorCode;
-import top.ctong.wisdom.common.R;
+import top.ctong.wisdom.common.utils.R;
 import top.ctong.wisdom.common.http.service.UserServiceClient;
 import top.ctong.wisdom.common.model.entity.User;
 import top.ctong.wisdom.common.utils.BeanUtils;

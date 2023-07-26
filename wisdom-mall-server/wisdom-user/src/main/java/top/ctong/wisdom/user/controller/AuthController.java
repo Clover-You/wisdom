@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import top.ctong.wisdom.common.ErrorCode;
-import top.ctong.wisdom.common.R;
+import top.ctong.wisdom.common.utils.R;
 import top.ctong.wisdom.common.exception.ThrowUtils;
 import top.ctong.wisdom.common.log.Log;
 import top.ctong.wisdom.common.model.dto.user.auth.RegisterRequest;
