@@ -1,7 +1,8 @@
-package top.ctong.wisdom.core.security;
+package top.ctong.wisdom.product.service;
 
-import lombok.Data;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import com.baomidou.mybatisplus.extension.service.IService;
+import top.ctong.wisdom.common.model.dto.product.unit.AddUnitRequest;
+import top.ctong.wisdom.common.model.entity.Unit;
 
 /**
  * █████▒█      ██  ▄████▄   ██ ▄█▀     ██████╗ ██╗   ██╗ ██████╗
@@ -15,37 +16,22 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * ░     ░ ░      ░  ░
  * Copyright 2023 Clover You.
  * <p>
- * security 自定义配置
+ * 单位服务
  * </p>
  *
  * @author Clover
- * @date 2023-06-29 10:45
+ * @date 2023-07-26 14:05
  */
-@Data
-@ConfigurationProperties(prefix = "wisdom.security")
-public class SecurityConfigProperties {
-    /**
-     * 验证类型
-     * @Default: Bearer
-     */
-    private String authorizationType = "Bearer";
+public interface UnitService extends IService<Unit> {
 
     /**
-     * 验证请求头名称
-     * @Default: Authorization
+     * 保存单位信息
+     *
+     * @param params 单位信息
+     * @param userId 用户id
+     * @return boolean
+     * @author Clover You
+     * @date 2023/7/26 14:10
      */
-    private String headerName = "Authorization";
-
-    /**
-     * 签名生成密钥
-     * @Default: wisdom
-     */
-    private String secret = "2cdc4c5a3d2541378b13fa8a206d393d";
-
-    /**
-     * token 过期时间
-     * @Default: 1800s
-     */
-    private Integer expires = 1800;
-
+    boolean save(AddUnitRequest params, Long userId);
 }

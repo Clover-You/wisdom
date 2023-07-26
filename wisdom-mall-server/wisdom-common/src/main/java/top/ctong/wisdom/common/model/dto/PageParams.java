@@ -1,7 +1,10 @@
-package top.ctong.wisdom.core.security;
+package top.ctong.wisdom.common.model.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+
+import java.io.Serial;
+import java.io.Serializable;
 
 /**
  * █████▒█      ██  ▄████▄   ██ ▄█▀     ██████╗ ██╗   ██╗ ██████╗
@@ -15,37 +18,29 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * ░     ░ ░      ░  ░
  * Copyright 2023 Clover You.
  * <p>
- * security 自定义配置
+ * 分页参数
  * </p>
  *
  * @author Clover
- * @date 2023-06-29 10:45
+ * @date 2023-07-26 14:38
  */
 @Data
-@ConfigurationProperties(prefix = "wisdom.security")
-public class SecurityConfigProperties {
-    /**
-     * 验证类型
-     * @Default: Bearer
-     */
-    private String authorizationType = "Bearer";
+@Schema(description = "分页参数")
+public class PageParams implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 7716678547495664955L;
 
     /**
-     * 验证请求头名称
-     * @Default: Authorization
+     * 没页大小
      */
-    private String headerName = "Authorization";
+    @Schema(description = "每页大小", defaultValue = "10")
+    private long size = 10;
 
     /**
-     * 签名生成密钥
-     * @Default: wisdom
+     * 当前页
      */
-    private String secret = "2cdc4c5a3d2541378b13fa8a206d393d";
-
-    /**
-     * token 过期时间
-     * @Default: 1800s
-     */
-    private Integer expires = 1800;
+    @Schema(description = "当前页", defaultValue = "1")
+    private long current = 1;
 
 }

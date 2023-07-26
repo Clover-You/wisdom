@@ -1,7 +1,14 @@
-package top.ctong.wisdom.core.security;
+package top.ctong.wisdom.common.model.dto.product.unit;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import lombok.NoArgsConstructor;
+import top.ctong.wisdom.common.model.dto.PageParams;
+
+import java.io.Serial;
+import java.io.Serializable;
 
 /**
  * █████▒█      ██  ▄████▄   ██ ▄█▀     ██████╗ ██╗   ██╗ ██████╗
@@ -15,37 +22,26 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * ░     ░ ░      ░  ░
  * Copyright 2023 Clover You.
  * <p>
- * security 自定义配置
+ * 单位分页参数
  * </p>
  *
  * @author Clover
- * @date 2023-06-29 10:45
+ * @date 2023-07-26 14:31
  */
+@Builder
 @Data
-@ConfigurationProperties(prefix = "wisdom.security")
-public class SecurityConfigProperties {
-    /**
-     * 验证类型
-     * @Default: Bearer
-     */
-    private String authorizationType = "Bearer";
+@NoArgsConstructor
+@AllArgsConstructor
+@Schema(description = "单位分页参数")
+public class UnitPageRequest extends PageParams implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 7716678547495664955L;
 
     /**
-     * 验证请求头名称
-     * @Default: Authorization
+     * 单位名称
      */
-    private String headerName = "Authorization";
-
-    /**
-     * 签名生成密钥
-     * @Default: wisdom
-     */
-    private String secret = "2cdc4c5a3d2541378b13fa8a206d393d";
-
-    /**
-     * token 过期时间
-     * @Default: 1800s
-     */
-    private Integer expires = 1800;
+    @Schema(description = "单位名称")
+    private String unitName;
 
 }

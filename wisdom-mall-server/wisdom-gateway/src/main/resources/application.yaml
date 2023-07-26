@@ -26,7 +26,7 @@ spring:
           predicates:
             - Path=/api/product/**
           filters:
-            - RewritePath=/api/(?<path>.*),$\{path}
+            - RewritePath=/api/(?<path>.*),/$\{path}
 logging:
   level:
     top.ctong.wisdom.gateway: debug
