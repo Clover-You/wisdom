@@ -1,4 +1,4 @@
-package top.ctong.wisdom.core.config.doc;
+package top.ctong.wisdom.core.converter.doc;
 
 import io.swagger.v3.core.converter.AnnotatedType;
 import io.swagger.v3.core.converter.ModelConverter;
