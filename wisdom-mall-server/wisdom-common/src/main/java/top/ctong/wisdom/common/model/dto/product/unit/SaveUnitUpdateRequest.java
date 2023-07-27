@@ -4,10 +4,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -30,12 +27,9 @@ import java.io.Serializable;
  * @author Clover
  * @date 2023-07-27 11:26
  */
-@Builder
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Schema(description = "单位保存修改")
-public class SaveUnitRequest implements Serializable {
+public class SaveUnitUpdateRequest implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 7716678547495664955L;
@@ -62,14 +56,14 @@ public class SaveUnitRequest implements Serializable {
      */
     @Schema(description = "启用状态 0=禁用；1=启用")
     @Pattern(regexp = "^[01]$", message = "「启用状态」参数错误，只能允许 0 或 1")
-    private Short enable;
+    private String enable;
 
     /**
      * 是否允许小数 0=不支持；1=支持
      */
     @Schema(description = "是否允许小数 0=不支持；1=支持")
     @Pattern(regexp = "^[01]$", message = "「是否允许小数」参数错误，只能允许 0 或 1")
-    private Short isDecimal;
+    private String isDecimal;
 
     /**
      * 单位排序

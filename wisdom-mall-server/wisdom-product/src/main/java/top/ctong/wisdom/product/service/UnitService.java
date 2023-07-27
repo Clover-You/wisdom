@@ -2,7 +2,7 @@ package top.ctong.wisdom.product.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import top.ctong.wisdom.common.model.dto.product.unit.AddUnitRequest;
-import top.ctong.wisdom.common.model.dto.product.unit.SaveUnitRequest;
+import top.ctong.wisdom.common.model.dto.product.unit.SaveUnitUpdateRequest;
 import top.ctong.wisdom.common.model.dto.product.unit.UnitPageRequest;
 import top.ctong.wisdom.common.model.dto.product.unit.UnitPageResponse;
 import top.ctong.wisdom.common.model.entity.Unit;
@@ -59,7 +59,7 @@ public interface UnitService extends IService<Unit> {
      * @author Clover You
      * @date 2023/7/27 11:33
      */
-    boolean updateSave(SaveUnitRequest params, Long userId);
+    boolean updateSave(SaveUnitUpdateRequest params, Long userId);
 
     /**
      * 查询单位信息

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import top.ctong.wisdom.common.ErrorCode;
 import top.ctong.wisdom.common.exception.ThrowUtils;
 import top.ctong.wisdom.common.model.dto.product.unit.AddUnitRequest;
-import top.ctong.wisdom.common.model.dto.product.unit.SaveUnitRequest;
+import top.ctong.wisdom.common.model.dto.product.unit.SaveUnitUpdateRequest;
 import top.ctong.wisdom.common.model.dto.product.unit.UnitPageRequest;
 import top.ctong.wisdom.common.model.dto.product.unit.UnitPageResponse;
 import top.ctong.wisdom.common.model.entity.Unit;
@@ -112,7 +112,7 @@ public class UnitServiceImpl extends ServiceImpl<UnitMapper, Unit> implements Un
      * @date 2023/7/27 11:33
      */
     @Override
-    public boolean updateSave(SaveUnitRequest params, Long userId) {
+    public boolean updateSave(SaveUnitUpdateRequest params, Long userId) {
         Long unitId = params.getUnitId();
 
         var record = this.getOne(userId, unitId);
@@ -121,8 +121,8 @@ public class UnitServiceImpl extends ServiceImpl<UnitMapper, Unit> implements Un
         var entity = Unit.builder()
             .unitName(params.getUnitName())
             .unitRemark(params.getUnitRemark())
-            .enable(params.getEnable())
-            .isDecimal(params.getIsDecimal())
+            .enable(Short.valueOf(params.getEnable()))
+            .isDecimal(Short.valueOf(params.getIsDecimal()))
             .sort(params.getSort())
             .build();
 

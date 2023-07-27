@@ -45,7 +45,7 @@ public class Unit implements Serializable {
     /**
      * 单位id
      */
-    @TableId(type = IdType.ASSIGN_ID)
+    @TableId(type = IdType.ASSIGN_UUID)
     @Schema(description = "单位id")
     private Long unitId;
 
