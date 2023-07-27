@@ -45,7 +45,7 @@ function GridPro<T extends object>(props: GridProProps<T>) {
   return (
     <>
       <Table<T>
-        {...{ props }}
+        {...props}
         style={{ borderRadius, overflow: 'hidden', ...props.style }}
         scroll={{ x: props.width ?? 'max-content', y: props.height }}
         dataSource={props.data}

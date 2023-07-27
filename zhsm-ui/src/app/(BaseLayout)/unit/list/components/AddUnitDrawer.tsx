@@ -36,7 +36,7 @@ export const AddUnitDrawer: FC<UnitDrawerProps> = (props) => {
     form.resetFields()
 
     // 检查是否操作成功，如果成功则通知父组件
-    if (operationSucceededFlag) {
+    if (operationSucceededFlag.current) {
       props.onFinish()
       operationSucceededFlag.current = false
     }

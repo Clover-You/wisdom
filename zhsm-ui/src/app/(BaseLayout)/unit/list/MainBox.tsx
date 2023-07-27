@@ -6,7 +6,10 @@
  * @date 2023-07-25 09:52
  */
 'use client'
-import { useEffect, type FC, type PropsWithChildren, useState } from 'react'
+import { useEffect, useState } from 'react'
+
+import type { TablePaginationConfig } from 'antd'
+import type { FC, PropsWithChildren } from 'react'
 
 import { ActionBar } from '#/app/(BaseLayout)/unit/list/components/ActionBar'
 import MainContent from '#/components/MainContent'
@@ -14,7 +17,7 @@ import { fetchUnitListAsPage } from '#/api/unit'
 import LayoutSpace from '#/components/LayoutSpace'
 import { UnitList } from './components/UnitList'
 import { useMessage } from '#/hooks/antd/useMessage'
-import { TablePaginationConfig } from 'antd'
+import { wait } from '#/utils'
 
 export const MainBox: FC<PropsWithChildren> = () => {
   const [queryWrapper, setQueryWrapper] = useState<API.UnitPageRequest>({
@@ -25,19 +28,30 @@ export const MainBox: FC<PropsWithChildren> = () => {
   const [dataList, setDataList] = useState<API.UnitPageResponse[]>()
   const [pageConfig, setPageConfig] = useState<TablePaginationConfig>({
     size: 'small',
+    hideOnSinglePage: true,
+    showQuickJumper: true,
+    onChange(page, pageSize) {
+      fetchList({
+        ...queryWrapper,
+        current: page,
+        size: pageSize,
+      })
+    },
   })
 
-  const fetchList = async () => {
+  const fetchList = async (params: API.UnitPageRequest) => {
+    if (loading) return
+
     try {
       setLoadState(true)
+      await wait(300)
       const {
         data: { code, message, data },
-      } = await fetchUnitListAsPage(queryWrapper)
+      } = await fetchUnitListAsPage(params)
 
       if (code != 200) return messageApi?.error?.(message)
 
       setDataList(data.list)
-      console.log(data)
 
       setPageConfig({
         ...pageConfig,
@@ -51,14 +65,14 @@ export const MainBox: FC<PropsWithChildren> = () => {
   }
 
   useEffect(() => {
-    fetchList()
+    fetchList(queryWrapper)
   }, [])
   return (
     <>
       <MainContent>
         <ActionBar
-          onSearch={fetchList}
-          finish={fetchList}
+          onSearch={() => fetchList(queryWrapper)}
+          finish={() => fetchList(queryWrapper)}
           unitNameChange={(val) => setQueryWrapper({ ...queryWrapper, unitName: val })}
         />
       </MainContent>

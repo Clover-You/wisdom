@@ -18,6 +18,7 @@ export const UnitList: FC<{
   data?: API.UnitPageResponse[]
   loading?: boolean
   pageConfig?: TablePaginationConfig
+  onChange?: () => void
 }> = (props) => {
   const [columns] = useState<GridProColumns<API.UnitPageResponse>>([
     {
@@ -52,7 +53,7 @@ export const UnitList: FC<{
       render: (value: number) => (value == 0 ? '停用' : '启用'),
     },
     {
-      title: '状态',
+      title: '备注',
       field: 'unitRemark',
       minWidth: 120,
     },
