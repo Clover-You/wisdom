@@ -138,8 +138,8 @@ const DecimalRadio: FC<{
           props.onChange?.(e.target.value)
         }}
       >
-        <Radio value={0}>允许</Radio>
-        <Radio value={1}>不允许</Radio>
+        <Radio value={1}>允许</Radio>
+        <Radio value={0}>不允许</Radio>
       </Radio.Group>
     </Space>
   )
