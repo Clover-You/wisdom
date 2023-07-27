@@ -69,6 +69,9 @@
   "keyToStringList": {
     "DatabaseDriversLRU": [
       "postgresql"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
+      "PostgreSQL"
     ]
   }
 }]]></component>
@@ -246,7 +249,7 @@
       <workItem from="1689905753426" duration="1354000" />
       <workItem from="1690161532330" duration="1362000" />
       <workItem from="1690335027164" duration="3220000" />
-      <workItem from="1690349391023" duration="11838000" />
+      <workItem from="1690349391023" duration="13247000" />
     </task>
     <servers />
   </component>
