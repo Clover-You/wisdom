@@ -34,7 +34,7 @@ public class SaveUnitUpdateRequest implements Serializable {
     @Serial
     private static final long serialVersionUID = 7716678547495664955L;
 
-    @Schema(description = "单位ID", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+    @Schema(description = "单位ID", requiredMode = Schema.RequiredMode.REQUIRED)
     @NotNull(message = "单位不能为空")
     private Long unitId;
 
