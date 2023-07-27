@@ -1,17 +1,12 @@
-use std::collections::HashMap;
-
 use actix_web::middleware::Logger;
 use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
 use env_logger::Env;
-use log::{info};
-use serde_json::Value;
+use log::info;
 
 mod utils;
-use utils::jwt;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-
     env_logger::init_from_env(Env::default().default_filter_or("debug"));
 
     HttpServer::new(|| {
@@ -37,12 +32,7 @@ async fn echo(req_body: String) -> impl Responder {
 }
 
 #[post("/save")]
-async fn save_record() -> impl Responder{
+async fn save_record() -> impl Responder {
     info!("日志保存 OK👌");
     HttpResponse::Ok()
-}
-
-pub struct JwtHeader {
-    alg: String,
-    typ: String
 }
