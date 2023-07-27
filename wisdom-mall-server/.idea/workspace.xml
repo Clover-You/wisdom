@@ -250,7 +250,7 @@
       <workItem from="1690161532330" duration="1362000" />
       <workItem from="1690335027164" duration="3220000" />
       <workItem from="1690349391023" duration="13247000" />
-      <workItem from="1690427699628" duration="5071000" />
+      <workItem from="1690427699628" duration="15481000" />
     </task>
     <servers />
   </component>
@@ -311,9 +311,14 @@
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/wisdom-product/src/main/java/top/ctong/wisdom/product/service/impl/UnitServiceImpl.java</url>
-          <line>117</line>
-          <option name="timeStamp" value="42" />
+          <url>jar://$MAVEN_REPOSITORY$/org/springdoc/springdoc-openapi-starter-common/2.1.0/springdoc-openapi-starter-common-2.1.0-sources.jar!/org/springdoc/core/configuration/SpringDocConfiguration.java</url>
+          <line>402</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springdoc/springdoc-openapi-starter-common/2.1.0/springdoc-openapi-starter-common-2.1.0-sources.jar!/org/springdoc/core/configuration/SpringDocConfiguration.java</url>
+          <line>400</line>
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
