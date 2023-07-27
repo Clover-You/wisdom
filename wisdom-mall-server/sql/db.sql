@@ -35,7 +35,7 @@ create table sys_unit
     unit_id     bigserial primary key,
     user_id     bigint                              not null,
     unit_name   varchar(256)                        not null,
-    unit_remark text                                not null,
+    unit_remark text,
     enable      smallint  default 0                 not null,
     is_decimal  smallint  default 0                 not null,
     sort        integer                             not null,
