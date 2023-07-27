@@ -55,7 +55,7 @@ declare namespace API {
     /**
      * 创建时间
      */
-    createAt?: Date
+    createAt?: string
     /**
      * 启用状态 0=禁用；1=启用
      */
@@ -71,7 +71,37 @@ declare namespace API {
     /**
      * 单位id
      */
-    unitId?: number
+    unitId?: string
+    /**
+     * 单位名称
+     */
+    unitName?: string
+    /**
+     * 备注
+     */
+    unitRemark?: string
+  }
+
+  /**
+   * SaveUnitUpdateRequest，单位保存修改
+   */
+  type SaveUnitUpdateRequest = {
+    /**
+     * 启用状态 0=禁用；1=启用
+     */
+    enable?: number
+    /**
+     * 是否允许小数 0=不支持；1=支持
+     */
+    isDecimal?: number
+    /**
+     * 单位排序
+     */
+    sort?: number
+    /**
+     * 单位ID
+     */
+    unitId: string
     /**
      * 单位名称
      */

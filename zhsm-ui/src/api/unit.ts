@@ -28,3 +28,11 @@ export const fetchUnitListAsPage = (params: API.UnitPageRequest) => {
     params,
   })
 }
+
+/**
+ * 修改单位信息
+ * @param params 单位信息
+ */
+export const saveUnitUpdate = (params: API.SaveUnitUpdateRequest) => {
+  return http.post<API.R>(service.unit.save_update, params)
+}

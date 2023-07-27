@@ -18,13 +18,19 @@ import LayoutSpace from '#/components/LayoutSpace'
 import { UnitList } from './components/UnitList'
 import { useMessage } from '#/hooks/antd/useMessage'
 import { wait } from '#/utils'
+import { useModal } from '#/hooks/antd/useModal'
+import { EditUnitDrawer } from './components/EditUnitDrawer'
 
 export const MainBox: FC<PropsWithChildren> = () => {
+  const messageApi = useMessage()
+  const modalApi = useModal()
+
   const [queryWrapper, setQueryWrapper] = useState<API.UnitPageRequest>({
     unitName: '',
   })
   const [loading, setLoadState] = useState(false)
-  const messageApi = useMessage()
+  const [editDrawerOpen, setEditOpen] = useState(false)
+  const [editCallbackData, setCallbackData] = useState<API.UnitPageResponse | undefined>(undefined)
   const [dataList, setDataList] = useState<API.UnitPageResponse[]>()
   const [pageConfig, setPageConfig] = useState<TablePaginationConfig>({
     size: 'small',
@@ -68,11 +74,40 @@ export const MainBox: FC<PropsWithChildren> = () => {
     }
   }
 
+  /**
+   * 编辑当前行
+   * @param record 但前行数据
+   */
+  const onRowEditClick = (record: API.UnitPageResponse) => {
+    setCallbackData(record)
+    setEditOpen(true)
+  }
+
+  /**
+   * 移除当前行数据
+   * @param record 当前行数据
+   */
+  const onRemoveRow = (record: API.UnitPageResponse) => {
+    modalApi?.confirm?.({
+      content: '确定要删除选中的单位吗?',
+      onOk: async () => {
+        messageApi?.success?.('删除成功')
+      },
+    })
+  }
+
   useEffect(() => {
     fetchList(queryWrapper)
   }, [])
   return (
     <>
+      <EditUnitDrawer
+        onFinish={() => fetchList(queryWrapper)}
+        open={editDrawerOpen}
+        callbackData={editCallbackData}
+        afterOpenChange={(open) => setEditOpen(open)}
+      />
+
       <MainContent>
         <ActionBar
           onSearch={() => fetchList(queryWrapper)}
@@ -85,6 +120,8 @@ export const MainBox: FC<PropsWithChildren> = () => {
 
       <MainContent>
         <UnitList
+          onEdit={onRowEditClick}
+          remove={onRemoveRow}
           data={dataList}
           loading={loading}
           pageConfig={pageConfig}

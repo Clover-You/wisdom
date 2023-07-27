@@ -39,7 +39,7 @@ declare namespace API {
     /**
      * 用户id
      */
-    userId?: number
+    userId?: string
     /**
      * 用户名
      */

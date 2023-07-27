@@ -15,9 +15,16 @@ import { GridProAlignType, GridProColumns, GridProFixedType } from '#/components
 import { Button, Divider, Space, TablePaginationConfig } from 'antd'
 
 export const UnitList: FC<{
+  /**表格数据 */
   data?: API.UnitPageResponse[]
+  /**表格加载状态 */
   loading?: boolean
+  /**分页配置 */
   pageConfig?: TablePaginationConfig
+  /**编辑按钮点击 */
+  onEdit: (record: API.UnitPageResponse) => void
+  /**删除按钮点击 */
+  remove: (record: API.UnitPageResponse) => void
   onChange?: () => void
 }> = (props) => {
   const [columns] = useState<GridProColumns<API.UnitPageResponse>>([
@@ -33,7 +40,12 @@ export const UnitList: FC<{
       align: GridProAlignType.Center,
       fixed: GridProFixedType.Left,
       width: 140,
-      render: () => <GridOperation />,
+      render: (ignore, row) => (
+        <GridOperation
+          onEdit={() => props.onEdit(row)}
+          remove={() => props.remove(row)}
+        />
+      ),
     },
     {
       title: '单位名称',
@@ -78,7 +90,12 @@ export const UnitList: FC<{
   )
 }
 
-const GridOperation: FC = () => {
+const GridOperation: FC<{
+  /**编辑按钮点击 */
+  onEdit: () => void
+  /**删除按钮点击 */
+  remove: () => void
+}> = (props) => {
   const ButtonStyle: CSSProperties = { padding: 0, height: 'auto' }
 
   return (
@@ -89,12 +106,14 @@ const GridOperation: FC = () => {
       <Button
         type={'link'}
         style={ButtonStyle}
+        onClick={props.onEdit}
       >
         编辑
       </Button>
       <Button
         type={'link'}
         style={ButtonStyle}
+        onClick={props.remove}
       >
         删除
       </Button>
