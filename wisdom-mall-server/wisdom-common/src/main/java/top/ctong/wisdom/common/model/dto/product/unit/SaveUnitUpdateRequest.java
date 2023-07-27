@@ -54,14 +54,14 @@ public class SaveUnitUpdateRequest implements Serializable {
     /**
      * 启用状态 0=禁用；1=启用
      */
-    @Schema(description = "启用状态 0=禁用；1=启用")
+    @Schema(description = "启用状态 0=禁用；1=启用", type = "integer")
     @Pattern(regexp = "^[01]$", message = "「启用状态」参数错误，只能允许 0 或 1")
     private String enable;
 
     /**
      * 是否允许小数 0=不支持；1=支持
      */
-    @Schema(description = "是否允许小数 0=不支持；1=支持")
+    @Schema(description = "是否允许小数 0=不支持；1=支持", type = "integer")
     @Pattern(regexp = "^[01]$", message = "「是否允许小数」参数错误，只能允许 0 或 1")
     private String isDecimal;
 
