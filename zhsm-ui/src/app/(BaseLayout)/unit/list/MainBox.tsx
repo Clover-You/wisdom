@@ -39,6 +39,10 @@ export const MainBox: FC<PropsWithChildren> = () => {
     },
   })
 
+  /**
+   * 数据查询
+   * @param params 查询参数
+   */
   const fetchList = async (params: API.UnitPageRequest) => {
     if (loading) return
 

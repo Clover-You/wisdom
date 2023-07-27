@@ -17,8 +17,11 @@ import { addNewUnit } from '#/api/unit'
 import { useMessage } from '#/hooks/antd/useMessage'
 
 type UnitDrawerProps = {
+  /**抽屉打开状态 */
   open?: boolean
+  /**抽屉状态改变勾子 */
   afterOpenChange?: (open: boolean) => void
+  /**抽屉内部操作完成，例如：新增完成 */
   onFinish: () => void
 }
 
@@ -42,6 +45,10 @@ export const AddUnitDrawer: FC<UnitDrawerProps> = (props) => {
     }
   }
 
+  /**
+   * 表单提交
+   * @param formData 表单数据
+   */
   const onFormSubmit = async (formData: API.AddUnitRequest) => {
     try {
       setLoadState(true)
