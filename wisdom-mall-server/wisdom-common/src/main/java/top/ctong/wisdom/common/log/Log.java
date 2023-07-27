@@ -1,7 +1,5 @@
 package top.ctong.wisdom.common.log;
 
-import org.apache.ibatis.type.Alias;
-
 import java.lang.annotation.*;
 
 /**

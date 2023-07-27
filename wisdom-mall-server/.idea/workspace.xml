@@ -63,8 +63,8 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "spring.configuration.checksum": "25bbdd142f1304c413a39ae1e638d9b3"
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "spring.configuration.checksum": "f8d7798ef3b60b726686b2891086a670"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -250,6 +250,7 @@
       <workItem from="1690161532330" duration="1362000" />
       <workItem from="1690335027164" duration="3220000" />
       <workItem from="1690349391023" duration="13247000" />
+      <workItem from="1690427699628" duration="1660000" />
     </task>
     <servers />
   </component>

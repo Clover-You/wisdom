@@ -3,11 +3,13 @@ package top.ctong.wisdom.product.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 import top.ctong.wisdom.common.log.Log;
 import top.ctong.wisdom.common.model.dto.product.unit.AddUnitRequest;
+import top.ctong.wisdom.common.model.dto.product.unit.SaveUnitRequest;
 import top.ctong.wisdom.common.model.dto.product.unit.UnitPageRequest;
 import top.ctong.wisdom.common.model.dto.product.unit.UnitPageResponse;
 import top.ctong.wisdom.common.utils.PageResp;
@@ -55,7 +57,7 @@ public class UnitController {
     @PostMapping("add")
     @Operation(summary = "添加商品单位")
     @Log(name = "添加单位")
-    public R<?> add(@RequestBody AddUnitRequest params, Principal principal) {
+    public R<?> add(@Valid @RequestBody AddUnitRequest params, Principal principal) {
         log.debug("添加单位参数 ===>>> {}", params);
         unitService.save(params, Long.valueOf(principal.getName()));
         return R.ok();
@@ -73,9 +75,26 @@ public class UnitController {
     @GetMapping("page")
     @Log(name = "分页获取单位信息")
     @Operation(summary = "分页获取单位信息")
-    public R<PageResp<UnitPageResponse>> page(UnitPageRequest params, Principal principal) {
+    public R<PageResp<UnitPageResponse>> page(@Valid UnitPageRequest params, Principal principal) {
         var results = unitService.page(params, Long.valueOf(principal.getName()));
         return R.ok(results);
+    }
+
+    /**
+     * 修改单位信息
+     *
+     * @return R<?>
+     * @author Clover You
+     * @date 2023/7/27 11:20
+     */
+    @Log(name = "修改单位信息")
+    @PostMapping("/save")
+    @Operation(summary = "修改单位信息")
+    public R<?> modify(@RequestBody @Valid SaveUnitRequest params, Principal principal) {
+        log.debug("修改单位信息请求参数 ===>>> {}", params);
+        var userId = Long.valueOf(principal.getName());
+        unitService.updateSave(params, userId);
+        return R.ok();
     }
 
 }

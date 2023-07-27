@@ -1,12 +1,14 @@
 package top.ctong.wisdom.product.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import top.ctong.wisdom.common.ErrorCode;
 import top.ctong.wisdom.common.exception.ThrowUtils;
 import top.ctong.wisdom.common.model.dto.product.unit.AddUnitRequest;
+import top.ctong.wisdom.common.model.dto.product.unit.SaveUnitRequest;
 import top.ctong.wisdom.common.model.dto.product.unit.UnitPageRequest;
 import top.ctong.wisdom.common.model.dto.product.unit.UnitPageResponse;
 import top.ctong.wisdom.common.model.entity.Unit;
@@ -98,5 +100,54 @@ public class UnitServiceImpl extends ServiceImpl<UnitMapper, Unit> implements Un
         var page = new Page<Unit>(params.getCurrent(), params.getSize());
         var result = this.baseMapper.page(page, queryWrapper);
         return new PageResp<>(result);
+    }
+
+    /**
+     * 保存修改
+     *
+     * @param params 单位信息
+     * @param userId 用户id
+     * @return boolean
+     * @author Clover You
+     * @date 2023/7/27 11:33
+     */
+    @Override
+    public boolean updateSave(SaveUnitRequest params, Long userId) {
+        Long unitId = params.getUnitId();
+
+        var record = this.getOne(userId, unitId);
+        ThrowUtils.throwIf(record == null, ErrorCode.PARAMS_ERROR, "单位不存在");
+
+        var entity = Unit.builder()
+            .unitName(params.getUnitName())
+            .unitRemark(params.getUnitRemark())
+            .enable(params.getEnable())
+            .isDecimal(params.getIsDecimal())
+            .sort(params.getSort())
+            .build();
+
+        var updateWrapper = new LambdaUpdateWrapper<Unit>();
+        updateWrapper.eq(Unit::getUnitId, unitId);
+        updateWrapper.eq(Unit::getUserId, userId);
+
+        return this.update(entity, updateWrapper);
+    }
+
+    /**
+     * 查询单位信息
+     *
+     * @param userId 用户id
+     * @param unitId 单位id
+     * @return Unit
+     * @author Clover You
+     * @date 2023/7/27 11:39
+     */
+    @Override
+    public Unit getOne(Long userId, Long unitId) {
+        var queryWrapper = new LambdaQueryWrapper<Unit>();
+        queryWrapper.eq(Unit::getUserId, userId);
+        queryWrapper.eq(Unit::getUnitId, unitId);
+
+        return this.getOne(queryWrapper);
     }
 }
