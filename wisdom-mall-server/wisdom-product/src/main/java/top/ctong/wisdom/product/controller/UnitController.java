@@ -6,10 +6,11 @@ import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import top.ctong.wisdom.common.log.Log;
 import top.ctong.wisdom.common.model.dto.product.unit.AddUnitRequest;
-import top.ctong.wisdom.common.model.dto.product.unit.SaveUnitRequest;
+import top.ctong.wisdom.common.model.dto.product.unit.SaveUnitUpdateRequest;
 import top.ctong.wisdom.common.model.dto.product.unit.UnitPageRequest;
 import top.ctong.wisdom.common.model.dto.product.unit.UnitPageResponse;
 import top.ctong.wisdom.common.utils.PageResp;
@@ -83,14 +84,15 @@ public class UnitController {
     /**
      * 修改单位信息
      *
+     * @param params 单位信息
      * @return R<?>
      * @author Clover You
      * @date 2023/7/27 11:20
      */
     @Log(name = "修改单位信息")
-    @PostMapping("/save")
+    @PostMapping("/saveUpdate")
     @Operation(summary = "修改单位信息")
-    public R<?> modify(@RequestBody @Valid SaveUnitRequest params, Principal principal) {
+    public R<?> update(@RequestBody @Validated SaveUnitUpdateRequest params, Principal principal) {
         log.debug("修改单位信息请求参数 ===>>> {}", params);
         var userId = Long.valueOf(principal.getName());
         unitService.updateSave(params, userId);
