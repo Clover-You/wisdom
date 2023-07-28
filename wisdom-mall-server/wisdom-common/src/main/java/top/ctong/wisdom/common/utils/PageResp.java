@@ -41,25 +41,25 @@ public class PageResp<T> implements Serializable {
     /**
      * 当前页
      */
-    @Schema(description = "当前页", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "当前页", requiredMode = Schema.RequiredMode.REQUIRED, type = "long")
     private long currentPage;
 
     /**
      * 总页数
      */
-    @Schema(description = "总页数", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "总页数", requiredMode = Schema.RequiredMode.REQUIRED, type = "long")
     private long totalPage;
 
     /**
      * 页大小
      */
-    @Schema(description = "页大小", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "页大小", requiredMode = Schema.RequiredMode.REQUIRED, type = "long")
     private long pageSize;
 
     /**
      * 总记录
      */
-    @Schema(description = "总记录", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "总记录", requiredMode = Schema.RequiredMode.REQUIRED, type = "long")
     private long total;
 
     public PageResp(IPage<T> page) {
