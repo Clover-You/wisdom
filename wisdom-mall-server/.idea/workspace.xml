@@ -36,10 +36,12 @@
       <MavenGeneralSettings>
         <option name="localRepository" value="$MAVEN_REPOSITORY$" />
         <option name="mavenHome" value="/usr/local/Cellar/maven/3.9.2/libexec" />
-        <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
   <component name="ProjectId" id="2RS53NdyJdNcsAYil6gjn5qJhcO" />
   <component name="ProjectViewState">
     <option name="flattenPackages" value="true" />
@@ -63,8 +65,8 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "spring.configuration.checksum": "f8d7798ef3b60b726686b2891086a670"
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "b9af3e466083a455dd9a08a28ea76551"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -250,7 +252,8 @@
       <workItem from="1690161532330" duration="1362000" />
       <workItem from="1690335027164" duration="3220000" />
       <workItem from="1690349391023" duration="13247000" />
-      <workItem from="1690427699628" duration="15806000" />
+      <workItem from="1690427699628" duration="16118000" />
+      <workItem from="1690513191554" duration="582000" />
     </task>
     <servers />
   </component>
