@@ -103,13 +103,23 @@ export const MainBox: FC<PropsWithChildren> = () => {
     })
   }
 
+  const getFetchParamRecords = (): API.UnitPageRequest => {
+    return {
+      ...queryWrapper,
+      current: pageConfig.current,
+      size: pageConfig.pageSize,
+    }
+  }
+
   useEffect(() => {
     fetchList(queryWrapper)
   }, [])
   return (
     <>
       <EditUnitDrawer
-        onFinish={() => fetchList(queryWrapper)}
+        onFinish={() => {
+          fetchList(getFetchParamRecords())
+        }}
         open={editDrawerOpen}
         callbackData={editCallbackData}
         afterOpenChange={(open) => setEditOpen(open)}
