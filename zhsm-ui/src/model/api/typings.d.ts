@@ -28,13 +28,13 @@ declare namespace API {
    */
   type PageResp<T> = {
     /**
-     * 当前页
-     */
-    currentPage: number
-    /**
      * 列表数据
      */
     list: T[]
+    /**
+     * 当前页
+     */
+    currentPage: number
     /**
      * 页大小
      */
