@@ -8,19 +8,14 @@
  * @create: 2023-06-20 00:24
  */
 import dynamic from 'next/dynamic'
-
-const LoginCard = dynamic(() => import('./LoginCard'), { ssr: false })
+const LoginContentBox = dynamic(() => import('./LoginContentBox'), { ssr: false })
 
 export const metadata = {
   title: '智慧商贸-登录',
 }
 
 function Login() {
-  return (
-    <main style={{ height: '100vh', background: 'url(/bg.svg)' }}>
-      <LoginCard />
-    </main>
-  )
+  return <LoginContentBox />
 }
 
 export default Login
