@@ -40,6 +40,11 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- 注册发现 Nacos 服务地址 -->
+        <config.nacos-addr>127.0.0.1</config.nacos-addr>
+        <!-- 数据库地址 -->
+        <config.datasource>127.0.0.1</config.datasource>
     </properties>
 
     <modules>
@@ -127,21 +132,4 @@
         </dependencies>
     </dependencyManagement>
 
-    <build>
-        <directory>${basedir}/target</directory>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>

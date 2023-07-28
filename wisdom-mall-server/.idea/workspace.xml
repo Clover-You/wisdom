@@ -20,6 +20,7 @@
         <option value="AnnotationType" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -85,6 +86,7 @@
       <recent name="$PROJECT_DIR$/wisdom-product/src/main/resources/mapper" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/wisdom-user" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -254,7 +256,7 @@
       <workItem from="1690349391023" duration="13247000" />
       <workItem from="1690427699628" duration="16118000" />
       <workItem from="1690513191554" duration="582000" />
-      <workItem from="1690514606530" duration="3535000" />
+      <workItem from="1690514606530" duration="6770000" />
     </task>
     <servers />
   </component>
@@ -308,11 +310,6 @@
           <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/6.0.9/spring-context-6.0.9-sources.jar!/org/springframework/context/annotation/AnnotationConfigUtils.java</url>
           <line>137</line>
           <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/wisdom-user/src/test/java/top/ctong/wisdom/user/HutoolJwtTests.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/org/springdoc/springdoc-openapi-starter-common/2.1.0/springdoc-openapi-starter-common-2.1.0-sources.jar!/org/springdoc/core/configuration/SpringDocConfiguration.java</url>
