@@ -20,6 +20,8 @@ import { useMessage } from '#/hooks/antd/useMessage'
 import { wait } from '#/utils'
 import { useModal } from '#/hooks/antd/useModal'
 import { EditUnitDrawer } from './components/EditUnitDrawer'
+import { AxiosError } from 'axios'
+import { useRequetErrorTools } from '#/utils/request/hooks/useRequetErrorTools'
 
 export const MainBox: FC<PropsWithChildren> = () => {
   const messageApi = useMessage()
@@ -45,6 +47,7 @@ export const MainBox: FC<PropsWithChildren> = () => {
     },
   })
 
+  const requestErrorTools = useRequetErrorTools()
   /**
    * 数据查询
    * @param params 查询参数
@@ -69,6 +72,10 @@ export const MainBox: FC<PropsWithChildren> = () => {
         total: data.total,
         current: data.currentPage,
       })
+    } catch (err) {
+      if (requestErrorTools.isBusinessException(err)) return
+      console.error(err)
+      messageApi?.error?.('系统异常')
     } finally {
       setLoadState(false)
     }

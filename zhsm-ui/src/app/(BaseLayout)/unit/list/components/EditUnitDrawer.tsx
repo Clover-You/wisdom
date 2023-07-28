@@ -83,14 +83,15 @@ export const EditUnitDrawer: FC<UnitDrawerProps> = (props) => {
 
   useEffect(() => {
     setTimeout(() => {
-      if (props.open && props.callbackData != void 0) return form.setFieldsValue({ 
-        enable: props.callbackData.enable,
-        isDecimal: props.callbackData.isDecimal,
-        sort: props.callbackData.sort,
-        unitId: props.callbackData.unitId,
-        unitName: props.callbackData.unitName,
-        unitRemark: props.callbackData.unitRemark
-       })
+      if (props.open && props.callbackData != void 0)
+        return form.setFieldsValue({
+          enable: props.callbackData.enable,
+          isDecimal: props.callbackData.isDecimal,
+          sort: props.callbackData.sort,
+          unitId: props.callbackData.unitId,
+          unitName: props.callbackData.unitName,
+          unitRemark: props.callbackData.unitRemark,
+        })
     })
   }, [props.callbackData, props.open, form])
 
@@ -119,7 +120,9 @@ export const EditUnitDrawer: FC<UnitDrawerProps> = (props) => {
         <Form.Item
           name={'unitId'}
           hidden
-        />
+        >
+          <Input />
+        </Form.Item>
 
         <Form.Item
           label={'单位名称'}
