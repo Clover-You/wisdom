@@ -135,8 +135,8 @@ public class LogAspect {
      */
     private int findRequestBodyParamIndex(Method method) {
         var collect = findTargetParamsAnnotationIndex(method, RequestBody.class);
-        if (collect.size() == 0) return -1;
-        // SpringBoot 默认取请求体数据只能取一次，所以直接指定第一个就可以
+        if (collect.isEmpty()) return -1;
+        // SpringBoot 默认取请求体数据只能取一次，所以直接指定第一个就可以。因为如果出现两个 @RequestBody ，会发生管道被提前关闭异常
         return collect.get(0);
     }
 
