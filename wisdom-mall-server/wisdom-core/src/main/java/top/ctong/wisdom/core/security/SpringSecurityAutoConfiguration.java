@@ -136,7 +136,7 @@ public class SpringSecurityAutoConfiguration {
         return (request, response, authException) -> {
             response.setCharacterEncoding("UTF-8");
             response.setContentType(MediaType.APPLICATION_JSON_VALUE);
-            response.setStatus(HttpStatus.FORBIDDEN.value());
+            response.setStatus(HttpStatus.UNAUTHORIZED.value());
 
             try (var writer = response.getWriter()) {
 
