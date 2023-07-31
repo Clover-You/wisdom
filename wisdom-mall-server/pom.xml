@@ -41,11 +41,43 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <!-- 注册发现 Nacos 服务地址 -->
-        <config.nacos-addr>127.0.0.1</config.nacos-addr>
-        <!-- 数据库地址 -->
-        <config.datasource>127.0.0.1</config.datasource>
     </properties>
+
+    <profiles>
+        <!-- 生开发环境配置值 -->
+        <profile>
+            <id>dev</id>
+            <properties>
+                <!-- 注册发现 Nacos 服务地址 -->
+                <config.nacos-addr>127.0.0.1:8848</config.nacos-addr>
+                <!-- 数据库地址 -->
+                <config.datasource>127.0.0.1:5432</config.datasource>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+
+        <!-- 生产环境配置值 -->
+        <profile>
+            <id>prod</id>
+            <properties>
+                <!-- 注册发现 Nacos 服务地址 -->
+                <config.nacos-addr>8.130.126.115:8848</config.nacos-addr>
+                <!-- 数据库地址 -->
+                <config.datasource>8.130.126.115:22031</config.datasource>
+            </properties>
+        </profile>
+        <profile>
+            <id>tinaroot-prod</id>
+            <properties>
+                <!-- 注册发现 Nacos 服务地址 -->
+                <config.nacos-addr>119.91.193.254:8848</config.nacos-addr>
+                <!-- 数据库地址 -->
+                <config.datasource>8.130.126.115:22031</config.datasource>
+            </properties>
+        </profile>
+    </profiles>
 
     <modules>
         <module>wisdom-core</module>

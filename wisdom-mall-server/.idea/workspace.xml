@@ -39,6 +39,11 @@
         <option name="mavenHome" value="/usr/local/Cellar/maven/3.9.2/libexec" />
       </MavenGeneralSettings>
     </option>
+    <option name="enabledProfiles">
+      <list>
+        <option value="tinaroot-prod" />
+      </list>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -59,7 +64,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/clover/dev-project/zhsm/wisdom-mall-server/wisdom-product/src/main/resources/mapper&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/clover/dev-project/zhsm/wisdom-mall-server/wisdom-third-party&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
@@ -83,6 +88,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/wisdom-third-party" />
+      <recent name="$PROJECT_DIR$/wisdom-product" />
+      <recent name="$PROJECT_DIR$/wisdom-gateway" />
       <recent name="$PROJECT_DIR$/wisdom-product/src/main/resources/mapper" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -97,7 +105,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.WisdomProductApplication">
+  <component name="RunManager" selected="Maven.wisdom-mall [package]">
     <configuration name="HutoolJwtTests.create" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="wisdom-user" />
       <extension name="coverage">
@@ -159,6 +167,102 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="wisdom-mall [package]" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+                <option value="-P" />
+                <option value="prod" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map>
+                <entry key="prod" value="true" />
+              </map>
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="wisdom-mall [package]" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+                <option value="-Pprod" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="wisdom-mall [test]" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="test" />
+                <option value="-P" />
+                <option value="dev" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map>
+                <entry key="dev" value="true" />
+              </map>
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <configuration name="WisdomGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="wisdom-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="top.ctong.wisdom.gateway.WisdomGatewayApplication" />
@@ -201,6 +305,8 @@
       <item itemvalue="JUnit.HutoolJwtTests.create" />
       <item itemvalue="JUnit.HutoolJwtTests.parse" />
       <item itemvalue="JUnit.HutoolJwtTests.verify" />
+      <item itemvalue="Maven.wisdom-mall [package]" />
+      <item itemvalue="Maven.wisdom-mall [test]" />
       <item itemvalue="Spring Boot.WisdomProductApplication" />
       <item itemvalue="Spring Boot.WisdomGatewayApplication" />
       <item itemvalue="Spring Boot.WisdomThirdPartyApplication" />
@@ -256,7 +362,8 @@
       <workItem from="1690349391023" duration="13247000" />
       <workItem from="1690427699628" duration="16118000" />
       <workItem from="1690513191554" duration="582000" />
-      <workItem from="1690514606530" duration="6770000" />
+      <workItem from="1690514606530" duration="11722000" />
+      <workItem from="1690766682695" duration="4743000" />
     </task>
     <servers />
   </component>
