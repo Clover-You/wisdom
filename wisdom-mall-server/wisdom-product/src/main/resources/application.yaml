@@ -5,8 +5,8 @@ spring:
     name: wisdom-product
   datasource:
     url: jdbc:postgresql://@config.nacos-addr@/wisdom_mall
-    username: postgres
-    password: 123456
+    username: @config.database.username@
+    password: @config.database.password@
     driver-class-name: org.postgresql.Driver
   cloud:
     nacos:
