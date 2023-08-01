@@ -4,6 +4,8 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,9 +38,13 @@ import java.security.Principal;
  * @author Clover
  * @date 2023-06-26 17:41
  */
+@RefreshScope
 @RestController
 @Tag(description = "用户前端控制器", name = "user-controller")
 public class UserController {
+
+    @Value("${auther.name}")
+    private String name;
 
     @Resource
     private UserService userService;

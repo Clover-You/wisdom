@@ -39,11 +39,6 @@
         <option name="mavenHome" value="/usr/local/Cellar/maven/3.9.2/libexec" />
       </MavenGeneralSettings>
     </option>
-    <option name="enabledProfiles">
-      <list>
-        <option value="tinaroot-prod" />
-      </list>
-    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -363,7 +358,8 @@
       <workItem from="1690427699628" duration="16118000" />
       <workItem from="1690513191554" duration="582000" />
       <workItem from="1690514606530" duration="11722000" />
-      <workItem from="1690766682695" duration="4743000" />
+      <workItem from="1690766682695" duration="12308000" />
+      <workItem from="1690857551453" duration="1304000" />
     </task>
     <servers />
   </component>
@@ -427,6 +423,16 @@
           <url>jar://$MAVEN_REPOSITORY$/org/springdoc/springdoc-openapi-starter-common/2.1.0/springdoc-openapi-starter-common-2.1.0-sources.jar!/org/springdoc/core/configuration/SpringDocConfiguration.java</url>
           <line>400</line>
           <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/wisdom-user/src/main/java/top/ctong/wisdom/user/controller/UserController.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/wisdom-user/src/main/java/top/ctong/wisdom/user/controller/UserController.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="71" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

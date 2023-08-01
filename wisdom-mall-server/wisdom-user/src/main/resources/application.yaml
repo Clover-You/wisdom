@@ -1,11 +1,13 @@
 server:
   port: 10000
-
 spring:
+  config:
+    import:
+      - optional:nacos:database
   datasource:
-    url: jdbc:postgresql://@config.nacos-addr@/wisdom_mall
+    url: jdbc:postgresql://8.130.126.115:22031/wisdom_mall
     username: postgres
-    password: 123456
+    password: @config.database.password@
     driver-class-name: org.postgresql.Driver
   application:
     name: wisdom-user
@@ -13,6 +15,9 @@ spring:
     nacos:
       discovery:
         server-addr: @config.nacos-addr@
+      config:
+        server-addr: @config.nacos-addr@
+        namespace: 594c7e01-d402-461a-bf85-e1bd70c545cb
 logging:
   level:
     top.ctong.wisdom.user: debug
