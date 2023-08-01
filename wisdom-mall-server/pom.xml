@@ -51,7 +51,10 @@
                 <!-- 注册发现 Nacos 服务地址 -->
                 <config.nacos-addr>127.0.0.1:8848</config.nacos-addr>
                 <!-- 数据库地址 -->
-                <config.datasource>127.0.0.1:5432</config.datasource>
+                <config.redis>8.130.126.115:63798</config.redis>
+                <config.datasource>8.130.126.115:22031</config.datasource>
+                <config.database.username>postgres</config.database.username>
+                <config.database.password>aMxrtByYvXu5Pi3tPwU</config.database.password>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -65,7 +68,10 @@
                 <!-- 注册发现 Nacos 服务地址 -->
                 <config.nacos-addr>8.130.126.115:8848</config.nacos-addr>
                 <!-- 数据库地址 -->
+                <config.redis>8.130.126.115:63798</config.redis>
                 <config.datasource>8.130.126.115:22031</config.datasource>
+                <config.database.username>postgres</config.database.username>
+                <config.database.password>aMxrtByYvXu5Pi3tPwU</config.database.password>
             </properties>
         </profile>
         <profile>
@@ -74,7 +80,10 @@
                 <!-- 注册发现 Nacos 服务地址 -->
                 <config.nacos-addr>119.91.193.254:8848</config.nacos-addr>
                 <!-- 数据库地址 -->
+                <config.redis>8.130.126.115:63798</config.redis>
                 <config.datasource>8.130.126.115:22031</config.datasource>
+                <config.database.username>postgres</config.database.username>
+                <config.database.password>aMxrtByYvXu5Pi3tPwU</config.database.password>
             </properties>
         </profile>
     </profiles>
