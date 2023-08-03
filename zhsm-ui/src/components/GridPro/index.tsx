@@ -10,8 +10,11 @@
 'use client'
 import { Table, theme } from 'antd'
 
+import classNames from 'classnames'
 import { TableProps } from 'antd/es/table'
 import { useEffect, useState } from 'react'
+
+import useStyle from './style'
 import { GridProColumns, GridProProps, GridProSize } from './GridProType'
 
 function toAntdColumns<T>(columns: GridProColumns<T> = []): TableProps<T>['columns'] {
@@ -42,9 +45,13 @@ function GridPro<T extends object>(props: GridProProps<T>) {
     setColumns(toAntdColumns<T>(props.columns))
   }, [props.columns, props])
 
-  return (
+  const prefixCls = 'wisdom-grid-pro'
+  const [wrapSSR, hashId] = useStyle(prefixCls)
+
+  return wrapSSR(
     <>
       <Table<T>
+        className={classNames(prefixCls, hashId)}
         {...props}
         style={{ borderRadius, overflow: 'hidden', ...props.style }}
         scroll={{ x: props.width ?? 'max-content', y: props.height }}
@@ -57,7 +64,7 @@ function GridPro<T extends object>(props: GridProProps<T>) {
         rowSelection={props.rowSelection}
         pagination={props.pagination}
       />
-    </>
+    </>,
   )
 }
 
