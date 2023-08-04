@@ -10,7 +10,7 @@
 'use client'
 
 import MainContent from '#/components/MainContent'
-import SiderMenu from './components/sider-menu'
+import SiderMenu from './components/SiderMenu'
 
 const SiderCard = () => {
   return (

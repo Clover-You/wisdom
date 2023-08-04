@@ -31,7 +31,16 @@ const items2: MenuProps['items'] = [
         key: 'SettingProduct',
         children: [
           {
-            label: <Link href={'/product/list'}>商品资料</Link>,
+            label: (
+              <Link
+                href={'/product/list'}
+                onLoadStart={() => {
+                  console.log('加载')
+                }}
+              >
+                商品资料
+              </Link>
+            ),
             key: 'ProductList',
           },
           {

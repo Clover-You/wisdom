@@ -11,7 +11,7 @@
 import { Card, Layout, Space } from 'antd'
 import type { CSSProperties, FC } from 'react'
 
-import UserPopover from './components/user-popover'
+import UserPopover from './components/UserPopover'
 import MainContent from '#/components/MainContent'
 
 type HeaderProps = {
