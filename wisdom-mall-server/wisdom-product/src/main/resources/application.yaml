@@ -1,17 +1,26 @@
 server:
   port: 10200
 spring:
+  profiles:
+    active:
+      - dev
+  config:
+    import:
+      - optional:nacos:database.yaml
+      - optional:nacos:log.yaml
   application:
     name: wisdom-product
   datasource:
-    url: jdbc:postgresql://@config.nacos-addr@/wisdom_mall
-    username: @config.database.username@
-    password: @config.database.password@
-    driver-class-name: org.postgresql.Driver
+    url:
+    username:
+    password:
+    driver-class-name:
   cloud:
     nacos:
-      discovery:
-        server-addr: @config.nacos-addr@
+      server-addr: @config.nacos-addr@
+      config:
+        namespace: 1dd53b79-5f05-4516-95e2-662364ece520
+        group: @config.nacos.config.group@
 
 logging:
   level:

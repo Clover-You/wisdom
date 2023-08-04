@@ -4,18 +4,19 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import top.ctong.wisdom.common.ErrorCode;
-import top.ctong.wisdom.common.utils.R;
 import top.ctong.wisdom.common.exception.ThrowUtils;
 import top.ctong.wisdom.common.log.Log;
 import top.ctong.wisdom.common.model.dto.user.GetUserInfoByUsernameResponse;
 import top.ctong.wisdom.common.model.dto.user.UserInfoResponse;
 import top.ctong.wisdom.common.model.entity.User;
+import top.ctong.wisdom.common.utils.R;
 import top.ctong.wisdom.user.service.UserService;
 
 import java.security.Principal;
@@ -43,8 +44,8 @@ import java.security.Principal;
 @Tag(description = "用户前端控制器", name = "user-controller")
 public class UserController {
 
-    @Value("${auther.name}")
-    private String name;
+    @Autowired
+    private Environment environment;
 
     @Resource
     private UserService userService;

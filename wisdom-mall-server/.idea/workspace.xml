@@ -59,7 +59,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/clover/dev-project/zhsm/wisdom-mall-server/wisdom-third-party&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/clover/dev-project/zhsm/wisdom-mall-server/wisdom-user/src/main/resources&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
@@ -83,10 +83,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/wisdom-user/src/main/resources" />
+      <recent name="$PROJECT_DIR$/wisdom-product/src/main/resources" />
       <recent name="$PROJECT_DIR$/wisdom-third-party" />
       <recent name="$PROJECT_DIR$/wisdom-product" />
       <recent name="$PROJECT_DIR$/wisdom-gateway" />
-      <recent name="$PROJECT_DIR$/wisdom-product/src/main/resources/mapper" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/wisdom-user" />
@@ -359,7 +360,8 @@
       <workItem from="1690513191554" duration="582000" />
       <workItem from="1690514606530" duration="11722000" />
       <workItem from="1690766682695" duration="12308000" />
-      <workItem from="1690857551453" duration="1304000" />
+      <workItem from="1690857551453" duration="7380000" />
+      <workItem from="1691113047613" duration="1429000" />
     </task>
     <servers />
   </component>
@@ -426,13 +428,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/wisdom-user/src/main/java/top/ctong/wisdom/user/controller/UserController.java</url>
-          <line>92</line>
+          <line>93</line>
           <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/wisdom-user/src/main/java/top/ctong/wisdom/user/controller/UserController.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="71" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

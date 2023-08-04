@@ -1,12 +1,17 @@
 server:
   port: 10300
 spring:
+  config:
+    import:
+     - optional:nacos:database.yaml
+     - optional:nacos:log.yaml
   application:
     name: wisdom-third-party
   cloud:
     nacos:
-      discovery:
-        server-addr: @config.nacos-addr@
+      server-addr: @config.nacos-addr@
+      config:
+        group: @config.nacos.config.group@
   data:
     redis:
       host: localhost

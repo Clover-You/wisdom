@@ -1,23 +1,27 @@
 server:
   port: 10000
 spring:
+  profiles:
+    active: dev
+    default: dev
   config:
     import:
-      - optional:nacos:database
+      - optional:nacos:database.yaml
+      - optional:nacos:log.yaml
+      - optional:nacos:application-${spring.profiles.active}.yaml
   datasource:
-    url: jdbc:postgresql://8.130.126.115:22031/wisdom_mall
-    username: postgres
-    password: @config.database.password@
+    url:
+    username:
+    password:
     driver-class-name: org.postgresql.Driver
   application:
     name: wisdom-user
   cloud:
     nacos:
-      discovery:
-        server-addr: @config.nacos-addr@
+      server-addr: @config.nacos-addr@
       config:
-        server-addr: @config.nacos-addr@
         namespace: 594c7e01-d402-461a-bf85-e1bd70c545cb
+        group: @config.nacos.config.group@
 logging:
   level:
     top.ctong.wisdom.user: debug
