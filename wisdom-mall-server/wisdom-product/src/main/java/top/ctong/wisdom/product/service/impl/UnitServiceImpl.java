@@ -65,8 +65,8 @@ public class UnitServiceImpl extends ServiceImpl<UnitMapper, Unit> implements Un
         var entity = Unit.builder()
             .unitName(params.getUnitName().trim())
             .unitRemark(params.getUnitRemark())
-            .enable(params.getEnable())
-            .isDecimal(params.getIsDecimal())
+            .enable(Short.valueOf(params.getEnable()))
+            .isDecimal(Short.valueOf(params.getIsDecimal()))
             .sort(sort)
             .userId(userId)
             .build();
