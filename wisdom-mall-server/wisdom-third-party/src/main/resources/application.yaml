@@ -9,6 +9,8 @@ spring:
     name: wisdom-third-party
   cloud:
     nacos:
+      discovery:
+        group: @config.nacos.discovery.group@
       server-addr: @config.nacos-addr@
       config:
         group: @config.nacos.config.group@

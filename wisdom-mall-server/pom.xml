@@ -51,6 +51,7 @@
                 <!-- 注册发现 Nacos 服务地址 -->
                 <config.nacos-addr>119.91.193.254:8848</config.nacos-addr>
                 <config.nacos.config.group>DEV</config.nacos.config.group>
+                <config.nacos.discovery.group>DEV</config.nacos.discovery.group>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -64,6 +65,7 @@
                 <!-- 注册发现 Nacos 服务地址 -->
                 <config.nacos-addr>119.91.193.254:8848</config.nacos-addr>
                 <config.nacos.config.group>PROD</config.nacos.config.group>
+                <config.nacos.discovery.group>DEFAULT_GROUP</config.nacos.discovery.group>
             </properties>
         </profile>
     </profiles>

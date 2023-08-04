@@ -8,6 +8,8 @@ spring:
     name: wisdom-gateway
   cloud:
     nacos:
+      discovery:
+        group: @config.nacos.discovery.group@
       config:
         namespace: 7f756de6-4853-4a8a-a986-530bb4129f8d
         group: @config.nacos.config.group@
