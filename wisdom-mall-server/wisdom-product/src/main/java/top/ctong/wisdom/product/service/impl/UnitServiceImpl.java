@@ -65,13 +65,18 @@ public class UnitServiceImpl extends ServiceImpl<UnitMapper, Unit> implements Un
         var entity = Unit.builder()
             .unitName(params.getUnitName().trim())
             .unitRemark(params.getUnitRemark())
-            .enable(Short.valueOf(params.getEnable()))
-            .isDecimal(Short.valueOf(params.getIsDecimal()))
             .sort(sort)
-            .userId(userId)
-            .build();
+            .userId(userId);
 
-        return this.save(entity);
+        if (params.getEnable() != null) {
+            entity.enable(Short.valueOf(params.getEnable()));
+        }
+
+        if (params.getIsDecimal() != null) {
+            entity.isDecimal(Short.valueOf(params.getIsDecimal()));
+        }
+
+        return this.save(entity.build());
     }
 
     /**
