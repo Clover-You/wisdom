@@ -53,10 +53,10 @@ const LoginCard: FC = () => {
 
       if (userInfoResponseCode != 200) return messageApi.error(userInfoResponseMessage)
 
-      await router.replace('/home')
+      router.replace('/home')
 
       const user = store.getState().user
-      // 一秒后显示欢迎回来，不能使用 hook，因为上下文一秒后将消失
+      // 一秒后显示欢迎回来
       setTimeout(() => {
         notificationApi?.open({
           message: '🎉 欢迎',

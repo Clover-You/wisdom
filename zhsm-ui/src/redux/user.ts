@@ -8,6 +8,7 @@
  * @create: 2023-07-12 18:15
  */
 import { persistReducer } from 'redux-persist'
+import Cookies from 'js-cookie'
 
 import { userLoginByMobile } from '#/api/login'
 import { fetchUserInfo } from '#/api/user'
@@ -79,6 +80,9 @@ export const LoginByMobile = createAsyncThunk(
   async (params: API.UserMobilePhoneLoginRequest, { rejectWithValue }) => {
     try {
       const result = await userLoginByMobile(params)
+      if (result.data.code == 200) {
+        Cookies.set('Authorization', 'Bearer ' + result.data.data)
+      }
       return result
     } catch (err) {
       return rejectWithValue(err)
@@ -89,6 +93,8 @@ export const LoginByMobile = createAsyncThunk(
 export const GetUserInfo = createAsyncThunk('USER_STORE/GetUserInfo', async (arg, { rejectWithValue }) => {
   try {
     const result = await fetchUserInfo()
+
+    // 设置到 cookie
     return result
   } catch (err) {
     return rejectWithValue(err)
