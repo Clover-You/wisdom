@@ -1,3 +1,10 @@
-export default function Home() {
-  return <main>Hello Worlds</main>
-}
+import Auth from '#/components/Security/Login'
+
+export default Auth(
+  {
+    login: true,
+  },
+  function Home() {
+    return <main>Hello Worlds</main>
+  },
+)

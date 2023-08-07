@@ -18,51 +18,57 @@ import { InventoryForm } from './components/form/InventoryForm'
 import { InventoryAlertForm } from './components/form/InventoryAlertForm'
 import { FooterAction } from './components/FooterAction'
 import { Form } from 'antd'
+import Auth from '#/components/Security/Login'
 
-const ProductAddPage: FC = () => {
-  const [form] = Form.useForm()
+const ProductAddPage: FC = Auth(
+  {
+    login: true,
+  },
+  () => {
+    const [form] = Form.useForm()
 
-  const saveAndAdd = () => {
-    console.log(form.getFieldsValue())
-  }
+    const saveAndAdd = () => {
+      console.log(form.getFieldsValue())
+    }
 
-  return (
-    <>
-      <MainContent title={'基本信息'}>
-        <BaseInfoForm form={form} />
-      </MainContent>
+    return (
+      <>
+        <MainContent title={'基本信息'}>
+          <BaseInfoForm form={form} />
+        </MainContent>
 
-      <LayoutSpace direction={'vertical'} />
+        <LayoutSpace direction={'vertical'} />
 
-      <MainContent title={'价格管理'}>
-        <PriceForm form={form} />
-      </MainContent>
+        <MainContent title={'价格管理'}>
+          <PriceForm form={form} />
+        </MainContent>
 
-      <LayoutSpace direction={'vertical'} />
+        <LayoutSpace direction={'vertical'} />
 
-      <MainContent title={'期初库存'}>
-        <InventoryForm />
-      </MainContent>
+        <MainContent title={'期初库存'}>
+          <InventoryForm />
+        </MainContent>
 
-      <LayoutSpace direction={'vertical'} />
+        <LayoutSpace direction={'vertical'} />
 
-      <MainContent title={'库存预警'}>
-        <InventoryAlertForm />
-      </MainContent>
+        <MainContent title={'库存预警'}>
+          <InventoryAlertForm />
+        </MainContent>
 
-      <LayoutSpace direction={'vertical'} />
+        <LayoutSpace direction={'vertical'} />
 
-      <MainContent
-        style={{
-          position: 'sticky',
-          bottom: 0,
-        }}
-        size={'small'}
-      >
-        <FooterAction saveAndAdd={saveAndAdd} />
-      </MainContent>
-    </>
-  )
-}
+        <MainContent
+          style={{
+            position: 'sticky',
+            bottom: 0,
+          }}
+          size={'small'}
+        >
+          <FooterAction saveAndAdd={saveAndAdd} />
+        </MainContent>
+      </>
+    )
+  },
+)
 
 export default ProductAddPage
