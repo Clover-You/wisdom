@@ -2,9 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   output: 'standalone',
-  env: {
-    QQ: 's',
-  },
   redirects: async () => {
     return [
       {
