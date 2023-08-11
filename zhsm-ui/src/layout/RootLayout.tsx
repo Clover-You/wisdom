@@ -8,15 +8,16 @@
  * @create: 2023-07-14 15:32
  */
 'use client'
-import { Layout, theme, Watermark } from 'antd'
+import { Layout, Watermark, theme } from 'antd'
 
 import type { FC } from 'react'
 import React, { useEffect } from 'react'
 
 import LayoutSpace from '#/components/LayoutSpace'
-import { useAppSetup, useDispatch, useUser } from '#/redux/store'
+import { SitePreviewNotice } from '#/components/SitePreviewNotice'
 import { useModal } from '#/hooks/antd/useModal'
 import { REFRESH_LOAD_STATE } from '#/redux/app'
+import { useAppSetup, useDispatch, useUser } from '#/redux/store'
 
 type RootLayoutProps = {
   header?: React.ReactNode
@@ -36,17 +37,17 @@ const RootLayout: FC<RootLayoutProps> = (props) => {
   } = theme.useToken()
 
   useEffect(() => {
-    if (appSetup.firstLoad && process.env.NODE_ENV === 'production') {
-      modalApi?.info({
-        title: '滴滴',
-        content: '该项目处于紧急开发状态，作者会不定期更新开发进度！',
-        onOk: () => {
-          dispatch(REFRESH_LOAD_STATE())
-        },
-      })
-    } else {
-      dispatch(REFRESH_LOAD_STATE())
-    }
+    // if (appSetup.firstLoad && process.env.NODE_ENV === 'production') {
+    modalApi?.info?.({
+      title: '滴滴',
+      content: <SitePreviewNotice />,
+      onOk: () => {
+        dispatch(REFRESH_LOAD_STATE())
+      },
+    })
+    // } else {
+    //   dispatch(REFRESH_LOAD_STATE())
+    // }
   }, [])
 
   return (

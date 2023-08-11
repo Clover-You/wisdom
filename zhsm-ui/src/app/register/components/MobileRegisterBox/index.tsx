@@ -130,7 +130,7 @@ export default function MobileRegisterBox() {
  * 发送验证码按钮
  */
 const SendBtnAddon = memo(function SendBtnAddon(props: { onClick: () => Promise<boolean | undefined> }) {
-  const { count, start, timingStatus } = useCountdown(60)
+  const { count, start, timingStatus } = useCountdown(10)
 
   return (
     <Button
