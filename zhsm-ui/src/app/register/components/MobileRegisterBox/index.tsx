@@ -7,12 +7,12 @@
  * @author: Clover
  * @create: 2023-08-11 09:48
  */
+import { memo } from 'react'
 import { LockOutlined, SecurityScanOutlined, UserOutlined } from '@ant-design/icons'
 import { Button, Card, CardProps, Form, Input, theme, FormProps } from 'antd'
 
 import { useMessage } from '#/hooks/antd/useMessage'
-import { memo } from 'react'
-import { useCountdown } from '#/hooks/antd/timing/useCountdown'
+import { useCountdown } from '#/hooks/timing/useCountdown'
 
 export default function MobileRegisterBox() {
   const {
