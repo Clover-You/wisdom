@@ -36,7 +36,7 @@ export default function MobileRegisterBox() {
    * 表单提交后触发
    * @param data 表单数据
    */
-  const submit = (data) => {
+  const submit = (data: any) => {
     console.log(data)
   }
 
