@@ -7,18 +7,33 @@
  */
 'use client'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
-import { Button, Card, Checkbox, Col, ConfigProvider, Form, FormProps, Input, message, Row, Space, theme } from 'antd'
+import {
+  Button,
+  Card,
+  Checkbox,
+  Col,
+  ConfigProvider,
+  Form,
+  Divider,
+  FormProps,
+  Input,
+  message,
+  Row,
+  Space,
+  theme,
+} from 'antd'
 import Link from 'next/link'
 import type { FC } from 'react'
-import { useState } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
+import { useState, useEffect } from 'react'
+import { AxiosError, AxiosResponse } from 'axios'
 
 import store, { useDispatch } from '#/redux/store'
 
 import { GetUserInfo, LoginByMobile } from '#/redux/user'
-import { AxiosError, AxiosResponse } from 'axios'
 import { SendPhoneCodeButton } from './SendPhoneCodeButton'
-import { useRouter } from 'next/navigation'
 import { useNotification } from '#/hooks/antd/useNotification'
+import { LoginMethodTab } from '#/components/LoginMethodList'
 
 const LoginCard: FC = () => {
   const { token } = theme.useToken()
@@ -29,6 +44,7 @@ const LoginCard: FC = () => {
   const [loadState, setLoad] = useState(false)
   const dispatch = useDispatch()
   const notificationApi = useNotification()
+  const searchParams = useSearchParams()
 
   const onLoginFinish = async (params: API.UserMobilePhoneLoginRequest) => {
     try {
@@ -108,6 +124,13 @@ const LoginCard: FC = () => {
     }
     return false
   }
+
+  useEffect(() => {
+    // 如果携带了 phone 参数访问，那么回填到表单
+    if (searchParams.get('phone') != void 0) {
+      form.setFieldValue('phone', searchParams.get('phone'))
+    }
+  }, [searchParams, form])
 
   return (
     <>
@@ -192,8 +215,8 @@ const LoginCard: FC = () => {
             </Button>
           </Form>
 
-          {/* <Divider plain>其它登录方式</Divider> */}
-          {/* <LoginMethodTab /> */}
+          <Divider plain>其它登录方式</Divider>
+          <LoginMethodTab />
         </Card>
       </ConfigProvider>
     </>

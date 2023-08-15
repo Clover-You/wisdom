@@ -7,19 +7,25 @@
  * @author: Clover
  * @create: 2023-08-11 09:48
  */
-import { memo } from 'react'
+import { memo, useState } from 'react'
 import { LockOutlined, SecurityScanOutlined, UserOutlined } from '@ant-design/icons'
 import { Button, Card, CardProps, Form, Input, theme, FormProps } from 'antd'
+import { useRouter } from 'next/navigation'
 
 import { useMessage } from '#/hooks/antd/useMessage'
 import { useCountdown } from '#/hooks/timing/useCountdown'
+
+import { registerByMobile } from '#/api/register'
 
 export default function MobileRegisterBox() {
   const {
     token: { boxShadowSecondary, colorTextPlaceholder },
   } = theme.useToken()
+  const router = useRouter()
   const messageApi = useMessage()
-  const [form] = Form.useForm()
+  const [form] = Form.useForm<API.UserMobileRegisterRequest>()
+
+  const [loading, setLoad] = useState(false)
 
   const cardProps: CardProps = {
     title: '注册',
@@ -36,8 +42,20 @@ export default function MobileRegisterBox() {
    * 表单提交后触发
    * @param data 表单数据
    */
-  const submit = (data: any) => {
-    console.log(data)
+  const submit = async (data: API.UserMobileRegisterRequest) => {
+    try {
+      setLoad(true)
+      const {
+        data: { code, message },
+      } = await registerByMobile(data)
+
+      if (code != 200) return messageApi?.error?.(message)
+
+      // 跳转到登录且携带账号信息
+      router.push('/login?phone=' + data.phone)
+    } finally {
+      setLoad(false)
+    }
   }
 
   /**
@@ -118,6 +136,7 @@ export default function MobileRegisterBox() {
           block
           type={'primary'}
           htmlType={'submit'}
+          loading={loading}
         >
           注册
         </Button>
@@ -130,7 +149,7 @@ export default function MobileRegisterBox() {
  * 发送验证码按钮
  */
 const SendBtnAddon = memo(function SendBtnAddon(props: { onClick: () => Promise<boolean | undefined> }) {
-  const { count, start, timingStatus } = useCountdown(10)
+  const { count, start, timingStatus } = useCountdown(60)
 
   return (
     <Button
