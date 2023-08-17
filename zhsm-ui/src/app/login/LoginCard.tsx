@@ -178,19 +178,17 @@ const LoginCard: FC = () => {
               help={''}
               rules={[{ required: true, message: '请输入6位验证码!' }]}
             >
-              <Space.Compact style={{ width: '100%' }}>
-                <Input
-                  prefix={<LockOutlined style={{ color: token.colorTextPlaceholder }} />}
-                  autoComplete={'none'}
-                  placeholder={'验证码'}
-                />
-
-                <SendPhoneCodeButton
-                  style={{ minWidth: 110 }}
-                  before={verifyPhoneCode}
-                  getPhone={async () => form.getFieldValue('phone')}
-                />
-              </Space.Compact>
+              <Input
+                prefix={<LockOutlined style={{ color: token.colorTextPlaceholder }} />}
+                autoComplete={'none'}
+                placeholder={'验证码'}
+                suffix={
+                  <SendPhoneCodeButton
+                    before={verifyPhoneCode}
+                    getPhone={async () => form.getFieldValue('phone')}
+                  />
+                }
+              />
             </Form.Item>
 
             <Form.Item>
