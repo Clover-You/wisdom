@@ -6,7 +6,7 @@
  * @date 2023-07-25 09:52
  */
 'use client'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 import type { TablePaginationConfig } from 'antd'
 import type { FC, PropsWithChildren } from 'react'
@@ -52,34 +52,37 @@ export const MainBox: FC<PropsWithChildren> = () => {
    * 数据查询
    * @param params 查询参数
    */
-  const fetchList = async (params: API.UnitPageRequest) => {
-    if (loading) return
+  const fetchList = useCallback(
+    async (params: API.UnitPageRequest) => {
+      if (loading) return
 
-    try {
-      setLoadState(true)
-      await wait(300)
-      const {
-        data: { code, message, data },
-      } = await fetchUnitListAsPage(params)
+      try {
+        setLoadState(true)
+        await wait(300)
+        const {
+          data: { code, message, data },
+        } = await fetchUnitListAsPage(params)
 
-      if (code != 200) return messageApi?.error?.(message)
+        if (code != 200) return messageApi?.error?.(message)
 
-      setDataList(data.list)
+        setDataList(data.list)
 
-      setPageConfig({
-        ...pageConfig,
-        pageSize: data.pageSize,
-        total: data.total,
-        current: data.currentPage,
-      })
-    } catch (err) {
-      if (requestErrorTools.isBusinessException(err)) return
-      console.error(err)
-      messageApi?.error?.('系统异常')
-    } finally {
-      setLoadState(false)
-    }
-  }
+        setPageConfig({
+          ...pageConfig,
+          pageSize: data.pageSize,
+          total: data.total,
+          current: data.currentPage,
+        })
+      } catch (err) {
+        if (requestErrorTools.isBusinessException(err)) return
+        console.error(err)
+        messageApi?.error?.('系统异常')
+      } finally {
+        setLoadState(false)
+      }
+    },
+    [pageConfig, loading, messageApi, requestErrorTools],
+  )
 
   /**
    * 编辑当前行
@@ -113,7 +116,8 @@ export const MainBox: FC<PropsWithChildren> = () => {
 
   useEffect(() => {
     fetchList(queryWrapper)
-  }, [])
+  }, [fetchList, queryWrapper])
+
   return (
     <>
       <EditUnitDrawer

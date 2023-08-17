@@ -37,18 +37,18 @@ const RootLayout: FC<RootLayoutProps> = (props) => {
   } = theme.useToken()
 
   useEffect(() => {
-    // if (appSetup.firstLoad && process.env.NODE_ENV === 'production') {
-    modalApi?.info?.({
-      title: '滴滴',
-      content: <SitePreviewNotice />,
-      onOk: () => {
-        dispatch(REFRESH_LOAD_STATE())
-      },
-    })
-    // } else {
-    //   dispatch(REFRESH_LOAD_STATE())
-    // }
-  }, [])
+    if (appSetup.firstLoad && process.env.NODE_ENV === 'production') {
+      modalApi?.info?.({
+        title: '滴滴',
+        content: <SitePreviewNotice />,
+        onOk: () => {
+          dispatch(REFRESH_LOAD_STATE())
+        },
+      })
+    } else {
+      dispatch(REFRESH_LOAD_STATE())
+    }
+  }, [appSetup.firstLoad, modalApi, dispatch])
 
   return (
     <Watermark content={[user.user?.userName ?? '', user.user?.phone ?? '']}>
