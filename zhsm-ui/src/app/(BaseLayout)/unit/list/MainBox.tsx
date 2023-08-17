@@ -6,7 +6,7 @@
  * @date 2023-07-25 09:52
  */
 'use client'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import type { TablePaginationConfig } from 'antd'
 import type { FC, PropsWithChildren } from 'react'
@@ -22,6 +22,7 @@ import { useModal } from '#/hooks/antd/useModal'
 import { EditUnitDrawer } from './components/EditUnitDrawer'
 import { AxiosError } from 'axios'
 import { useRequetErrorTools } from '#/utils/request/hooks/useRequetErrorTools'
+import { useMounted } from '#/hooks'
 
 export const MainBox: FC<PropsWithChildren> = () => {
   const messageApi = useMessage()
@@ -114,9 +115,9 @@ export const MainBox: FC<PropsWithChildren> = () => {
     }
   }
 
-  useEffect(() => {
+  useMounted(() => {
     fetchList(queryWrapper)
-  }, [fetchList, queryWrapper])
+  })
 
   return (
     <>
