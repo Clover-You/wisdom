@@ -6,23 +6,22 @@
  * @date 2023-07-25 09:52
  */
 'use client'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useState } from 'react'
 
 import type { TablePaginationConfig } from 'antd'
 import type { FC, PropsWithChildren } from 'react'
 
-import { ActionBar } from '#/app/(BaseLayout)/unit/list/components/ActionBar'
-import MainContent from '#/components/MainContent'
 import { fetchUnitListAsPage } from '#/api/unit'
+import { ActionBar } from '#/app/(BaseLayout)/unit/list/components/ActionBar'
 import LayoutSpace from '#/components/LayoutSpace'
-import { UnitList } from './components/UnitList'
-import { useMessage } from '#/hooks/antd/useMessage'
-import { wait } from '#/utils'
-import { useModal } from '#/hooks/antd/useModal'
-import { EditUnitDrawer } from './components/EditUnitDrawer'
-import { AxiosError } from 'axios'
-import { useRequetErrorTools } from '#/utils/request/hooks/useRequetErrorTools'
+import MainContent from '#/components/MainContent'
 import { useMounted } from '#/hooks'
+import { useMessage } from '#/hooks/antd/useMessage'
+import { useModal } from '#/hooks/antd/useModal'
+import { wait } from '#/utils'
+import { useRequetErrorTools } from '#/utils/request/hooks/useRequetErrorTools'
+import { EditUnitDrawer } from './components/EditUnitDrawer'
+import { UnitList } from './components/UnitList'
 
 export const MainBox: FC<PropsWithChildren> = () => {
   const messageApi = useMessage()
